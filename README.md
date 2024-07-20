@@ -32,6 +32,8 @@
 
 #### Partie 2 : Capture de trafic réseau (15 minutes)
 
+![PROTOCOLES](./Images/Encapsulation_Protocoles.png)*d'après Wikipedia*
+
 1. **Générer du trafic HTTP/HTTPS :**
    - Ouvrez un navigateur web et visitez plusieurs sites web pour générer du trafic HTTP et HTTPS.
 
