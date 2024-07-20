@@ -42,7 +42,7 @@
    - Ouvrez un terminal ou l'invite de commandes et exécutez la commande `ping www.google.com`.
 
 3. **Générer du trafic TCP/UDP :**
-   - Utilisez des applications ou services connus pour utiliser des connexions TCP et UDP, comme le téléchargement d'un fichier ou le streaming de vidéos.
+   - Utilisez des applications ou services connus pour utiliser des connexions TCP et UDP, comme le téléchargement d'un fichier ou le streaming de vidéos (Voir l'outil NetworkStuff)
 
 4. **Arrêter la capture :**
    - Revenez à Wireshark et cliquez sur le bouton "Stop" pour arrêter la capture de trafic.
