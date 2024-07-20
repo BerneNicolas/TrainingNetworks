@@ -103,6 +103,60 @@
 
 Ce TP permet aux apprenants de comprendre l'encapsulation des protocoles réseau en utilisant Wireshark pour capturer et analyser du trafic réseau. En passant par les différents filtres et en examinant les paquets, les apprenants visualisent comment chaque protocole encapsule les données du protocole de la couche supérieure, offrant une compréhension pratique et concrète du modèle OSI.
 
+### Masques Réseaux en IPv4 et Notation CIDR: Synthèse
+
+#### Introduction
+Les masques réseaux et la notation CIDR (Classless Inter-Domain Routing) sont essentiels pour la gestion et la structuration des réseaux IP. Ils permettent de segmenter les réseaux en sous-réseaux et de gérer efficacement l'adressage IP.
+
+#### Masques Réseaux en IPv4
+Un **masque réseau** est une séquence de 32 bits utilisée pour diviser une adresse IP en deux parties: l'adresse du réseau et l'adresse de l'hôte. Il est souvent représenté sous forme de quatre octets décimaux, par exemple, `255.255.255.0`.
+
+- **Fonctionnement**: 
+  - Les bits à `1` dans le masque réseau désignent la partie réseau de l'adresse IP.
+  - Les bits à `0` désignent la partie hôte.
+
+**Exemple**:
+Pour l'adresse IP `192.168.1.10` avec un masque réseau `255.255.255.0`:
+- Partie réseau: `192.168.1`
+- Partie hôte: `10`
+
+#### Classes d'Adresses IP et Masques Réseaux
+Historiquement, les adresses IPv4 étaient divisées en classes (A, B, C, D, E), chaque classe ayant un masque réseau par défaut:
+- **Classe A**: `255.0.0.0`
+- **Classe B**: `255.255.0.0`
+- **Classe C**: `255.255.255.0`
+
+#### Notation CIDR (Classless Inter-Domain Routing)
+La **notation CIDR** est une méthode plus flexible pour représenter les réseaux et sous-réseaux. Elle utilise une adresse IP suivie d'un slash (/) et du nombre de bits `1` dans le masque réseau.
+
+- **Exemple de Notation CIDR**:
+  - `192.168.1.0/24` signifie que les 24 premiers bits de l'adresse IP sont utilisés pour la partie réseau, équivalent au masque `255.255.255.0`.
+
+#### Avantages de la Notation CIDR
+- **Flexibilité**: Permet de créer des sous-réseaux de taille variable, optimisant ainsi l'utilisation des adresses IP.
+- **Efficacité**: Réduit le gaspillage d'adresses IP en permettant une allocation plus précise.
+
+#### Conversion entre Notation CIDR et Masques Réseaux
+- `255.0.0.0` = `/8`
+- `255.255.0.0` = `/16`
+- `255.255.255.0` = `/24`
+- `255.255.255.128` = `/25`
+
+#### Exemple d'Utilisation de la Notation CIDR
+1. **Division d'un Réseau en Sous-Réseaux**:
+   - Réseau: `192.168.1.0/24`
+   - Sous-réseaux possibles:
+     - `192.168.1.0/26` (64 adresses)
+     - `192.168.1.64/26` (64 adresses)
+     - `192.168.1.128/26` (64 adresses)
+     - `192.168.1.192/26` (64 adresses)
+
+2. **Routeur et CIDR**:
+   - Un routeur peut être configuré pour acheminer des paquets vers des sous-réseaux spécifiques en utilisant la notation CIDR pour réduire les entrées de routage.
+
+#### Conclusion
+Les masques réseaux et la notation CIDR sont des outils puissants pour la gestion des adresses IP dans un réseau. La transition vers la notation CIDR a permis une utilisation plus efficiente des adresses IP et une meilleure flexibilité dans la création et la gestion des sous-réseaux, facilitant ainsi la scalabilité et l'organisation des réseaux modernes.
+
 # VLAN
 ### Synthèse sur les VLAN
 
