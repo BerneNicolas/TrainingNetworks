@@ -575,9 +575,9 @@ Ce guide offre une vue d'ensemble pour configurer STP sur un switch D-Link, gara
 
 # Interconnexion des switchs
 ## Interfaces GBIC 
-![SFP SX](./images/20211217222425548701d13b3e4f34bfee9e6c3bc9747e.webp)
+![SFP SX](./Images/20211217222425548701d13b3e4f34bfee9e6c3bc9747e.webp)
 
-![SFP SX](./images/Simplex-BiDi-SFP-vs-Duplex-SFP.jpg)
+![SFP SX](./Images/Simplex-BiDi-SFP-vs-Duplex-SFP.jpg)
 
 La principale différence entre les SFP SX et LX réside dans la longueur d'onde utilisée et la distance de transmission prise en charge.
  > SFP SX (Short Wavelength)
