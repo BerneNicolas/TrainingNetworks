@@ -410,6 +410,42 @@ STP fonctionne en créant une arborescence logique (spanning tree) à partir de 
 4. **Sélection des Designated Ports** : Pour chaque segment réseau, un seul port est désigné pour acheminer les trames vers et depuis ce segment.
 5. **Blocage des ports redondants** : Les ports non désignés et non root sont mis en état de blocage pour éviter les boucles.
 
+### Algorithme STP
+L'algorithme STP procède en plusieurs phases : élection du commutateur racine, détermination du port racine sur chaque commutateur, détermination du port désigné sur chaque segment, blocage des autres ports.
+
+1. (voir figure ci-dessous) 
+- Les cases numérotées représentent des commutateurs (le numéro étant le bridge ID). Les nuages repérés par des lettres représentent les segments du réseau.
+
+![STP Figure 1](./Images/STP_1.jpg)*d'après Wikipedia*
+
+2. (voir figure ci-dessous)
+- Le plus petit bridge ID vaut 3. Par conséquent, le commutateur 3 devient le commutateur racine.
+
+![STP Figure 2](./Images/STP_2.jpg)*d'après Wikipedia*
+
+3. (voir figure ci-dessous)
+- En supposant que le coût de traversée de chaque segment réseau est 1, le chemin de moindre coût du commutateur 4 au commutateur racine passe par le segment réseau "c". Par conséquent, le port racine pour le commutateur 4 est celui qui mène au segment réseau "c".
+- RP = Root Port (Port Racine).
+
+![STP Figure 3](./Images/STP_3.jpg)*d'après Wikipedia*
+
+4. (voir figure ci-dessous)
+- Le chemin de moindre coût depuis le segment réseau "e" passe par le commutateur 92. Par conséquent, le port désigné pour le segment réseau "e" est le port qui le connecte au commutateur 92.
+- DP = Designated Port (Port désigné).
+
+![STP Figure 4](./Images/STP_4.jpg)*d'après Wikipedia*
+
+5. (voir figure ci-dessous) 
+- Tout port qui n'est ni racine ni désigné devient un port bloqué.
+- BP = Blocked Port (Port bloqué).
+
+![STP Figure 5](./Images/STP_5.jpg)*d'après Wikipedia*
+
+6. 
+- Après la chute d'un lien (marquée par une croix), un nouvel arbre de moindre coût est calculé.
+
+![STP Figure 6](./Images/STP_6.jpg)*d'après Wikipedia*
+
 #### États des ports dans STP
 Les ports peuvent se trouver dans l'un des états suivants :
 - **Blocking** : Le port ne transfère pas de données, il écoute seulement les BPDU (Bridge Protocol Data Units).
