@@ -188,7 +188,7 @@ Les adresses IP privées sont utilisées au sein des réseaux locaux (LAN) pour 
 
 #### Exemple d'Utilisation
 
-1. **Réseau Domestique**:
+1. **Réseau Domestique**: 
    - Utilisation d'une plage d'adresses privées de Classe C, par exemple `192.168.1.0/24`, pour connecter des ordinateurs, des imprimantes, des smartphones, etc.
    - Le routeur utilise NAT pour permettre aux appareils de se connecter à l'internet avec une seule adresse IP publique.
 
