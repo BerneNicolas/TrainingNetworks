@@ -1,18 +1,6 @@
-<<<<<<< HEAD
 # Training Networks July 24th and 25th 2024
 
 ### TP : Découverte de l'encapsulation des protocoles avec Wireshark
-=======
-<<<<<<< HEAD
-# TrainingNetworks July 24th and 25th 2024
-
-### Activité : Découverte de l'encapsulation des protocoles avec Wireshark
-=======
-"# TrainingNetworks July 24th and 25th 2024" 
-
-### TP : Découverte de l'encapsulation des protocoles avec Wireshark
->>>>>>> c454595 (Update Encapsulation)
->>>>>>> a4ba690 (Encapsulation)
 
 #### Objectifs pédagogiques
 - Comprendre le concept d'encapsulation des protocoles dans le modèle OSI.
@@ -44,12 +32,9 @@
 
 #### Partie 2 : Capture de trafic réseau (15 minutes)
 
-<<<<<<< HEAD
 ![PROTOCOLES](./Images/Encapsulation_Protocoles.jpg)
 *d'après Wikipedia*
 
-=======
->>>>>>> a4ba690 (Encapsulation)
 1. **Générer du trafic HTTP/HTTPS :**
    - Ouvrez un navigateur web et visitez plusieurs sites web pour générer du trafic HTTP et HTTPS.
 
@@ -57,11 +42,7 @@
    - Ouvrez un terminal ou l'invite de commandes et exécutez la commande `ping www.google.com`.
 
 3. **Générer du trafic TCP/UDP :**
-<<<<<<< HEAD
    - Utilisez des applications ou services connus pour utiliser des connexions TCP et UDP, comme le téléchargement d'un fichier ou le streaming de vidéos (Voir l'outil NetworkStuff)
-=======
-   - Utilisez des applications ou services connus pour utiliser des connexions TCP et UDP, comme le téléchargement d'un fichier ou le streaming de vidéos.
->>>>>>> a4ba690 (Encapsulation)
 
 4. **Arrêter la capture :**
    - Revenez à Wireshark et cliquez sur le bouton "Stop" pour arrêter la capture de trafic.
@@ -89,7 +70,6 @@
 4. **Examiner les paquets ICMP :**
    - Appliquez le filtre `icmp` et sélectionnez un paquet.
    - Notez le type et le code ICMP.
-<<<<<<< HEAD
 
 5. **Examiner les paquets TCP :**
    - Appliquez le filtre `tcp` et sélectionnez un paquet.
@@ -649,42 +629,3 @@ Les tables ARP sont essentielles pour le bon fonctionnement des réseaux locaux,
 ## Mobaxterm
 
 
-=======
-
-5. **Examiner les paquets TCP :**
-   - Appliquez le filtre `tcp` et sélectionnez un paquet.
-   - Notez les ports source et destination, les numéros de séquence et d'accusé de réception.
-
-<<<<<<< HEAD
-### Résumé de l'activité
-Cette activité permet aux apprenants de visualiser concrètement comment les protocoles réseau sont encapsulés les uns dans les autres, et de comprendre comment utiliser Wireshark pour analyser le trafic réseau. Elle combine des explications théoriques avec une pratique concrète, facilitant ainsi l'assimilation des concepts clés en réseaux et télécommunications.
-=======
-6. **Examiner les paquets UDP :**
-   - Appliquez le filtre `udp` et sélectionnez un paquet.
-   - Notez les ports source et destination.
-
-7. **Examiner les paquets HTTP :**
-   - Appliquez le filtre `http` et sélectionnez un paquet.
-   - Notez la méthode HTTP, l'URL, et le statut de la réponse.
-
-8. **Examiner les paquets HTTPS :**
-   - Appliquez le filtre `tls` et sélectionnez un paquet.
-   - Notez les informations disponibles malgré le chiffrement (ex. la négociation TLS).
-
-#### Partie 4 : Discussion et conclusion (10 minutes)
-
-1. **Discussion en groupe :**
-   - Discutez des observations faites pendant l'analyse.
-   - Mettez en évidence comment chaque couche encapsule les données de la couche supérieure.
-
-2. **Questions et réponses :**
-   
-3. **Conclusion :**
-   - Récapitulez les points clés de l'activité.
-   - Soulignez l'importance de l'encapsulation et des différentes couches de protocoles.
-
-### Résumé du TP
-
-Ce TP permet de comprendre l'encapsulation des protocoles réseau en utilisant Wireshark pour capturer et analyser du trafic réseau. En passant par les différents filtres et en examinant les paquets, les apprenants visualisent comment chaque protocole encapsule les données du protocole de la couche supérieure, offrant une compréhension pratique et concrète du modèle OSI.
->>>>>>> c454595 (Update Encapsulation)
->>>>>>> a4ba690 (Encapsulation)
