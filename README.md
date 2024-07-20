@@ -1,4 +1,5 @@
-"# TrainingNetworks July 24th and 25th 2024" 
+# TrainingNetworks July 24th and 25th 2024
+
 ### Activité : Découverte de l'encapsulation des protocoles avec Wireshark
 
 #### Objectifs pédagogiques
