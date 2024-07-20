@@ -99,10 +99,6 @@
    - Récapitulez les points clés de l'activité.
    - Soulignez l'importance de l'encapsulation et des différentes couches de protocoles.
 
-### Résumé du TP
-
-Ce TP permet aux apprenants de comprendre l'encapsulation des protocoles réseau en utilisant Wireshark pour capturer et analyser du trafic réseau. En passant par les différents filtres et en examinant les paquets, les apprenants visualisent comment chaque protocole encapsule les données du protocole de la couche supérieure, offrant une compréhension pratique et concrète du modèle OSI.
-
 ### Masques Réseaux en IPv4 et Notation CIDR: Synthèse
 
 #### Introduction
