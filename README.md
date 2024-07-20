@@ -471,6 +471,32 @@ Ce guide offre une vue d'ensemble pour configurer STP sur un switch D-Link, gara
 
 10. **Quelle action doit être prise pour activer STP sur un switch D-Link via l'interface CLI ?**
     - C. `spanning-tree`
+
+
+# Interconnexion des switchs
+## Interfaces GBIC 
+![SFP SX](./images/20211217222425548701d13b3e4f34bfee9e6c3bc9747e.webp)
+
+![SFP SX](./images/Simplex-BiDi-SFP-vs-Duplex-SFP.jpg)
+
+La principale différence entre les SFP SX et LX réside dans la longueur d'onde utilisée et la distance de transmission prise en charge.
+ > SFP SX (Short Wavelength)
+- Utilisent une longueur d'onde courte de 850 nm.
+- Conçus pour une utilisation sur fibre optique multimode.
+- Prennent en charge des distances allant jusqu'à 550 mètres sur fibre multimode.
+- Idéaux pour les connexions intra-bâtiment et les réseaux locaux (LAN).
+- Moins coûteux que les SFP LX.
+
+>SFP LX (Long Wavelength)
+- Utilisent une longueur d'onde plus longue de 1310 nm.
+- Conçus pour une utilisation sur fibre optique monomode.
+- Prennent en charge des distances allant jusqu'à 10 km sur fibre monomode.
+- Conviennent mieux pour les connexions inter-bâtiments et les réseaux métropolitains.
+- Plus coûteux que les SFP SX mais offrent une plus grande portée.
+- En résumé, les SFP SX sont optimisés pour les courtes distances sur fibre multimode, tandis que les SFP LX permettent des liaisons plus longues sur fibre monomode. - - Le choix dépend de la distance à couvrir et du type de fibre optique utilisé dans le réseau.
+
+
+
 # QOS 
 ### Synthèse sur la Qualité de Service (QoS)
 
