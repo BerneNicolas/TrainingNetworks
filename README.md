@@ -16,7 +16,7 @@
 - Connexion Internet pour générer du trafic HTTP/HTTPS.
 
 #### Durée
-- 1 heure.
+- 45 minutes.
 
 ### Étapes de l'activité
 
