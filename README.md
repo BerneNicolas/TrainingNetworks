@@ -1,5 +1,6 @@
 # Training Networks July 24th and 25th 2024
 
+![](./Images/baie_de_brassage.jpg)
 ### TP : Découverte de l'encapsulation des protocoles avec Wireshark
 
 #### Objectifs pédagogiques
@@ -201,6 +202,15 @@ Les adresses IP privées sont utilisées au sein des réseaux locaux (LAN) pour 
 
 #### Conclusion
 Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial dans la gestion des réseaux internes, offrant sécurité, flexibilité et une utilisation efficace des adresses IP. Elles permettent aux organisations de tous types et de toutes tailles de structurer leurs réseaux de manière efficace, tout en conservant les adresses IP publiques pour les communications externes.
+
+# ETHERNET
+### Synthèse sur le protocol ETHERNET
+![](./Images/Image2.jpg)
+### Synthèse sur les fibres optiques
+![](./Images/Image1.jpg)
+![](./Images/Fibre_Image4.png)
+![T568B](./Images/T568B_DROIT_Image5.png)
+![T568A](./Images/T568A_DROIT_Image6.png)
 
 # VLAN
 ### Synthèse sur les VLAN
