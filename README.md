@@ -16,7 +16,7 @@
 - Connexion Internet pour générer du trafic HTTP/HTTPS.
 
 #### Durée
-- 1 heure 30 minutes.
+- 45 minutes.
 
 ### Étapes du TP
 
@@ -94,8 +94,6 @@
    - Mettez en évidence comment chaque couche encapsule les données de la couche supérieure.
 
 2. **Questions et réponses :**
-   - Encouragez les apprenants à poser des questions pour clarifier leurs doutes.
-   - Répondez aux questions et fournissez des explications supplémentaires si nécessaire.
 
 3. **Conclusion :**
    - Récapitulez les points clés de l'activité.
