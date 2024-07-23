@@ -534,16 +534,18 @@ Le VLAN par port est une méthode de segmentation réseau facile à comprendre e
 # TP Réseau : Mise en œuvre des VLANs et du Trunking sur des Switches L2
 
 ## Objectifs du TP
-1. Configurer des VLANs sur un switch L2.
-2. Assigner des ports à des VLANs spécifiques.
-3. Tester la connectivité des VLANs.
-4. Configurer un deuxième switch et établir une liaison Trunk entre les deux switches pour transporter les VLANs.
+>[!TIP]
+>1. Configurer des VLANs sur un switch L2.
+>2. Assigner des ports à des VLANs spécifiques.
+>3. Tester la connectivité des VLANs.
+>4. Configurer un deuxième switch et établir une liaison Trunk entre les deux switches pour transporter les VLANs.
 
 ## Matériel nécessaire
-- 2 switches L2 (D-Link DGS-3100-24 / DGS-1210-24).
-- Câbles Ethernet.
-- Ordinateurs ou machines virtuelles pour les tests.
-- Logiciel de capture (Wireshark)
+>[!TIP]
+>- 2 switches L2 (D-Link DGS-3100-24 / DGS-1210-24).
+>- Câbles Ethernet.
+>- Ordinateurs ou machines virtuelles pour les tests.
+>- Logiciel de capture (Wireshark)
 
 ## Partie 1 : Configuration des VLANs sur un Switch L2
 
