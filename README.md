@@ -155,11 +155,13 @@ La **notation CIDR** est une méthode plus flexible pour représenter les résea
    - Un routeur peut être configuré pour acheminer des paquets vers des sous-réseaux spécifiques en utilisant la notation CIDR pour réduire les entrées de routage.
 
 #### Conclusion
-Les masques réseaux et la notation CIDR sont des outils puissants pour la gestion des adresses IP dans un réseau. La transition vers la notation CIDR a permis une utilisation plus efficiente des adresses IP et une meilleure flexibilité dans la création et la gestion des sous-réseaux, facilitant ainsi la scalabilité et l'organisation des réseaux modernes.
+>[!NOTE]
+>Les masques réseaux et la notation CIDR sont des outils puissants pour la gestion des adresses IP dans un réseau. La transition vers la notation CIDR a permis une utilisation plus efficiente des adresses IP et une meilleure flexibilité dans la création et la gestion des sous-réseaux, facilitant ainsi la scalabilité et l'organisation des réseaux modernes.
 
 ### Synthèse sur les Adresses IPv4 Privées pour les Classes A, B et C
 
 #### Introduction
+>[!NOTE]
 Les adresses IP privées sont utilisées au sein des réseaux locaux (LAN) pour permettre la communication entre les appareils sans nécessiter une adresse IP publique unique pour chaque appareil. Ces adresses ne sont pas routables sur l'internet public, ce qui améliore la sécurité et permet une réutilisation efficace des adresses IP. Les plages d'adresses IPv4 privées sont définies par la RFC 1918.
 
 #### Plages d'Adresses IPv4 Privées
