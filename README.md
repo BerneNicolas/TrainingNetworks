@@ -61,7 +61,7 @@
 >     - TCP : `tcp`
 >     - UDP : `udp`
 >     - HTTP : `http`
->    - HTTPS : `tls`
+>     - HTTPS : `tls`
 
 2. **Examiner les paquets Ethernet :**
    - Appliquez le filtre `eth` et sélectionnez un paquet.
