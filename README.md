@@ -940,7 +940,9 @@ L'activation de QoS varie en fonction des équipements et des environnements ré
 ### Conclusion
 La QoS est une composante essentielle des réseaux modernes, en particulier pour les environnements où la bande passante est partagée entre de nombreuses applications ayant des besoins différents. En permettant la classification, la priorisation, le marquage et la gestion du trafic réseau, QoS assure une meilleure performance, une utilisation optimisée de la bande passante et une expérience utilisateur améliorée.
 
-
-Test <span style="color:#00FF00"> texte coloré en vert </color>.
-
-
+\text $${\color{lightGreen}Texte \space en \space vert}$$
+[!NOTE]Test message
+[!IMPORTANT]Test message
+[!TIP]Test message
+[!WARNING]Test message
+[!CAUTION]Test message
