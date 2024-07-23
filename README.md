@@ -19,7 +19,7 @@
 - Connexion Internet pour générer du trafic HTTP/HTTPS.
 
 #### Durée
-- 45 minutes.
+- 1h30
 
 ### Étapes du TP
 
