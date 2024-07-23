@@ -404,7 +404,8 @@ La configuration des VLAN se fait principalement sur les commutateurs réseau (s
 
 ### Quizz sur les VLAN
 
->[!TIP] /space 
+>[!TIP] 
+> 
 #### Questions
 1. Qu'est-ce qu'un VLAN ?
 2. Quel est le principal avantage des VLAN en termes de sécurité ?
