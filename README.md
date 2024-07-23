@@ -213,8 +213,8 @@ Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial da
 ![T568A](./Images/T568A_DROIT_Image6.png)
 
 # VLAN
+![](./Images/Image2.jpg)
 ### Synthèse sur les VLAN
-
 #### Définition
 Un VLAN (Virtual Local Area Network) est une technologie qui permet de segmenter un réseau physique en plusieurs réseaux logiques distincts. Les VLAN permettent de regrouper des périphériques réseau situés à des endroits différents comme s'ils faisaient partie du même réseau local.
 
@@ -242,12 +242,6 @@ La configuration des VLAN se fait principalement sur les commutateurs réseau (s
 2. Assigner des ports au VLAN.
 3. Configurer les ports comme access ou trunk.
 
-#### Exemples de commandes (Cisco IOS)
-- **Créer un VLAN** : `vlan 10`
-- **Nommer un VLAN** : `name VLAN10`
-- **Assigner un port à un VLAN** : `interface fa0/1`, `switchport mode access`, `switchport access vlan 10`
-- **Configurer un port trunk** : `interface fa0/24`, `switchport mode trunk`, `switchport trunk allowed vlan 10,20,30`
-
 ### Quizz sur les VLAN
 
 #### Questions
@@ -255,10 +249,8 @@ La configuration des VLAN se fait principalement sur les commutateurs réseau (s
 2. Quel est le principal avantage des VLAN en termes de sécurité ?
 3. Quelle est la norme la plus courante pour le tagging des VLAN ?
 4. Quelle est la différence entre un port access et un port trunk ?
-5. Nommez deux types de VLAN autres que les VLAN de données.
-6. Comment les trames sont-elles identifiées dans un VLAN ?
-7. Que signifie le terme "Native VLAN" ?
-8. Quelle commande est utilisée pour assigner un port à un VLAN spécifique sur un switch Cisco ?
+5. Comment les trames sont-elles identifiées dans un VLAN ?
+6. Quelle commande est utilisée pour assigner un port à un VLAN spécifique sur un switch Cisco ?
 
 #### Correction
 1. **Qu'est-ce qu'un VLAN ?**
@@ -273,19 +265,13 @@ La configuration des VLAN se fait principalement sur les commutateurs réseau (s
 4. **Quelle est la différence entre un port access et un port trunk ?**
    Un port access est associé à un seul VLAN et reçoit des trames non étiquetées, tandis qu'un port trunk peut transporter des trames de plusieurs VLANs, chaque trame étant étiquetée avec l'identifiant VLAN approprié.
 
-5. **Nommez deux types de VLAN autres que les VLAN de données.**
-   Voice VLAN et Management VLAN.
-
-6. **Comment les trames sont-elles identifiées dans un VLAN ?**
+5. **Comment les trames sont-elles identifiées dans un VLAN ?**
    Les trames sont identifiées par des étiquettes (tags) VLAN.
 
-7. **Que signifie le terme "Native VLAN" ?**
-   Le Native VLAN est utilisé pour les trames non étiquetées sur un port trunk.
-
-8. **Quelle commande est utilisée pour assigner un port à un VLAN spécifique sur un switch Cisco ?**
+6. **Quelle commande est utilisée pour assigner un port à un VLAN spécifique sur un switch Cisco ?**
    `switchport access vlan [numéro_du_vlan]`.
 
-   ### QCM sur les VLAN
+### QCM sur les VLAN
 
 #### Questions
 
@@ -331,24 +317,6 @@ La configuration des VLAN se fait principalement sur les commutateurs réseau (s
    - C. Le VLAN utilisé pour la gestion du réseau.
    - D. Le VLAN utilisé uniquement pour le trafic voix.
 
-8. **Quelle commande est utilisée pour créer un VLAN sur un switch Cisco ?**
-   - A. `vlan create 10`
-   - B. `vlan add 10`
-   - C. `vlan 10`
-   - D. `vlan setup 10`
-
-9. **Quel est le rôle principal d'un Voice VLAN ?**
-   - A. Séparer le trafic voix du trafic données.
-   - B. Sécuriser les communications voix.
-   - C. Augmenter la bande passante pour le trafic voix.
-   - D. Permettre la gestion des appels internationaux.
-
-10. **Quelle est la commande pour configurer un port en mode trunk sur un switch Cisco ?**
-    - A. `switchport mode access`
-    - B. `switchport mode trunk`
-    - C. `switchport access vlan`
-    - D. `switchport vlan trunk`
-
 #### Correction
 
 1. **Qu'est-ce qu'un VLAN ?**
@@ -373,17 +341,8 @@ La configuration des VLAN se fait principalement sur les commutateurs réseau (s
 7. **Que signifie le terme "Native VLAN" ?**
    - B. Le VLAN par défaut pour les trames non étiquetées.
 
-8. **Quelle commande est utilisée pour créer un VLAN sur un switch Cisco ?**
-   - C. `vlan 10`
-
-9. **Quel est le rôle principal d'un Voice VLAN ?**
-   - A. Séparer le trafic voix du trafic données.
-
-10. **Quelle est la commande pour configurer un port en mode trunk sur un switch Cisco ?**
-    - B. `switchport mode trunk`
-
 ### VLAN par Port
-
+![](./Images/Image2.jpg)
 #### Définition
 Le VLAN par port, également connu sous le nom de VLAN statique, est une méthode de configuration des VLANs où chaque port d'un commutateur est associé manuellement à un VLAN spécifique. Les périphériques connectés à ces ports sont alors membres de ce VLAN particulier, quelle que soit leur adresse MAC ou tout autre critère.
 
@@ -405,7 +364,81 @@ Le VLAN par port, également connu sous le nom de VLAN statique, est une méthod
 
 Le VLAN par port est une méthode de segmentation réseau facile à comprendre et à mettre en œuvre, particulièrement adaptée aux petits réseaux ou aux environnements où la topologie ne change pas fréquemment. Cependant, dans les réseaux de grande taille ou dynamiques, cette méthode peut devenir difficile à gérer et manque de flexibilité. Les administrateurs réseau doivent peser ces avantages et inconvénients pour déterminer si cette méthode convient à leurs besoins spécifiques.
 
+# TP Réseau : Mise en œuvre des VLANs et du Trunking sur des Switches L2
+
+## Objectifs du TP
+1. Configurer des VLANs sur un switch L2.
+2. Assigner des ports à des VLANs spécifiques.
+3. Tester la connectivité des VLANs.
+4. Configurer un deuxième switch et établir une liaison Trunk entre les deux switches pour transporter les VLANs.
+
+## Matériel nécessaire
+- 2 switches L2 (D-Link DGS-3100-24 / DGS-1210-24).
+- Câbles Ethernet.
+- Ordinateurs ou machines virtuelles pour les tests.
+- Logiciel de capture (Wireshark)
+
+## Partie 1 : Configuration des VLANs sur un Switch L2
+
+### Étape 1 : Configuration de base du Switch 1
+1. Recherchez les switchs sur le réseau LAN (utilisez les outils logiciels mis à disposition, ne pas faire de reset matériel !).
+Note : le login et le password ont par défaut les valeurs d'usine.  
+Connectez-vous au switch via le site web embarqué.
+2. Entrez en mode configuration globale et modifier l'adresse IP du switch.
+- Adresse IP : 192.168.7.x/24 avec x le numéro du groupe qui vous a été attribué. 
+- Note importante : pensez à faire un "Save" de la configuration du switch et pas uniquement un "Apply". Un "Save" permet de sauvegarder la configuration avec un reboot. 
+    
+### Étape 2 : Création des VLANs
+1. Créez trois VLANs (VLAN 10, VLAN 20, VLAN 30).
+    
+### Étape 3 : Assigner les ports aux VLANs
+1. Assignez les ports aux VLANs :
+- VLAN 10 : ports de 1 à 8.
+- VLAN 20 : ports de 9 à 16.
+- VLAN 30 : ports de 17 à 24.
+    
+### Étape 4 : Vérification de la configuration des VLANs
+1. Vérifiez la configuration des VLANs.
+    
+### Étape 5 : Test de la connectivité des VLANs
+1. Connectez des ordinateurs aux ports assignés aux différents VLANs.
+2. Configurez les adresses IP sur chaque ordinateur selon les VLANs (par exemple, 192.168.10.x/24 pour VLAN 10, 192.168.20.x/24 pour VLAN 20, etc.).
+3. Testez la connectivité en utilisant des commandes `ping` pour vérifier que les ordinateurs du même VLAN peuvent communiquer entre eux :
+- PC sur le port 1 (VLAN 10) doit pouvoir pinguer un PC sur le port 8 (VLAN 10).
+- PC sur le port 9 (VLAN 20) doit pouvoir pinguer un PC sur le port 16 (VLAN 20).
+- PC sur le port 17 (VLAN 30) doit pouvoir pinguer un PC sur le port 24 (VLAN 30).
+
+## Partie 2 : Configuration de la liaison Trunk entre deux Switches L2
+
+### Étape 1 : Configuration de base du Switch 2
+1. Connectez-vous au deuxième switch via le site web.
+2. Entrez en mode configuration globale.
+
+### Étape 2 : Création des VLANs sur le Switch 2
+1. Répétez les mêmes étapes que pour le Switch 1 pour créer les mêmes VLANs (VLAN 10, VLAN 20, VLAN 30).
+
+### Étape 3 : Configuration de la liaison Trunk sur le Switch 1
+1. Configurez le port 24 pour le mode Trunk.
+   
+### Étape 4 : Configuration de la liaison Trunk sur le Switch 2
+1. Configurez le port 24 pour le mode Trunk sur le Switch 2.
+   
+### Étape 5 : Vérification de la configuration du Trunk
+1. Vérifiez que le Trunk est correctement configuré sur les deux switches.
+  
+### Étape 6 : Test de la connectivité entre les VLANs à travers les deux switches
+1. Connectez des ordinateurs aux ports assignés aux différents VLANs sur chaque switch.
+2. Configurez les adresses IP sur chaque ordinateur selon les VLANs.
+3. Testez la connectivité en utilisant des commandes `ping` pour vérifier que les ordinateurs du même VLAN mais sur des switches différents peuvent communiquer entre eux :
+    - PC sur Switch 1 (port 1, VLAN 10) doit pouvoir pinguer un PC sur Switch 2 (port 1, VLAN 10).
+    - PC sur Switch 1 (port 9, VLAN 20) doit pouvoir pinguer un PC sur Switch 2 (port 9, VLAN 20).
+    - PC sur Switch 1 (port 17, VLAN 30) doit pouvoir pinguer un PC sur Switch 2 (port 17, VLAN 30).
+
+## Conclusion
+Ce TP vous a permis de configurer des VLANs sur des switches L2 et de mettre en place une liaison Trunk pour transporter les VLANs entre deux switches. Vous avez également appris à vérifier la configuration et à tester la connectivité des VLANs.
+
 # SPANNING TREE
+![](./Images/Image2.jpg)
 ### Synthèse sur le Spanning Tree Protocol (STP)
 
 #### Définition
@@ -474,54 +507,6 @@ Les ports peuvent se trouver dans l'un des états suivants :
 - **RSTP (802.1w)** : Rapid Spanning Tree Protocol, introduit en 2001, qui offre des temps de convergence plus rapides.
 - **MSTP (802.1s)** : Multiple Spanning Tree Protocol, qui permet plusieurs instances de spanning tree pour différents VLANs.
 
-### Exemple de Configuration STP sur un Switch D-Link
-
-#### Modèle : DGS-1210-28
-
-Pour configurer le Spanning Tree Protocol sur un commutateur D-Link, voici un exemple de configuration :
-
-1. **Connexion au switch** : Connectez-vous au switch via l'interface web ou en utilisant un terminal console.
-
-2. **Activer STP** :
-   - **Interface Web** :
-     1. Connectez-vous à l'interface web du switch.
-     2. Allez dans la section "Spanning Tree" ou "STP" sous le menu de configuration.
-     3. Activez STP globalement sur le switch.
-     4. Configurez les paramètres globaux tels que le mode (STP, RSTP, MSTP) et le Bridge Priority.
-
-   - **Interface CLI** :
-     ```plaintext
-     DGS-1210-28:admin# configure
-     DGS-1210-28:config# spanning-tree
-     DGS-1210-28:config# spanning-tree mode rstp
-     DGS-1210-28:config# spanning-tree priority 4096
-     ```
-
-3. **Configurer les ports STP** :
-   - **Interface Web** :
-     1. Allez dans la section "Port Settings" sous "Spanning Tree".
-     2. Configurez les paramètres spécifiques des ports comme le coût du chemin et l'état (Edge Port si connecté à un périphérique de fin).
-
-   - **Interface CLI** :
-     ```plaintext
-     DGS-1210-28:config# interface ethernet 1/1
-     DGS-1210-28:config-if# spanning-tree port-priority 128
-     DGS-1210-28:config-if# spanning-tree cost 20000
-     DGS-1210-28:config-if# spanning-tree edge-port
-     ```
-
-4. **Vérifier la configuration** :
-   - **Interface Web** :
-     1. Vérifiez l'état du spanning tree dans la section de statut.
-     2. Assurez-vous que les ports et le root bridge sont correctement configurés.
-
-   - **Interface CLI** :
-     ```plaintext
-     DGS-1210-28# show spanning-tree
-     ```
-
-Ce guide offre une vue d'ensemble pour configurer STP sur un switch D-Link, garantissant ainsi une protection efficace contre les boucles de commutation et une amélioration de la résilience du réseau.
-
 ### QCM sur le Spanning Tree Protocol (STP)
 
 #### Questions
@@ -550,41 +535,23 @@ Ce guide offre une vue d'ensemble pour configurer STP sur un switch D-Link, gara
    - C. PVST+
    - D. 802.1Q
 
-5. **Quelle commande permet de vérifier l'état du spanning tree sur un switch D-Link via CLI ?**
-   - A. `show spanning-tree`
-   - B. `spanning-tree status`
-   - C. `display spanning-tree`
-   - D. `check spanning-tree`
-
-6. **Dans quel état un port STP apprend-il les adresses MAC mais ne transfère pas encore de données ?**
+5. **Dans quel état un port STP apprend-il les adresses MAC mais ne transfère pas encore de données ?**
    - A. Forwarding
    - B. Learning
    - C. Blocking
    - D. Listening
 
-7. **Quelle est la fonction d'un port désigné dans STP ?**
+6. **Quelle est la fonction d'un port désigné dans STP ?**
    - A. Transférer les données uniquement vers le Root Bridge.
    - B. Transférer les données dans un segment réseau spécifique.
    - C. Transférer les BPDUs uniquement.
    - D. Bloquer le trafic pour éviter les boucles.
 
-8. **Quel protocole permet la gestion de plusieurs instances de spanning tree pour différents VLANs ?**
-   - A. STP
-   - B. RSTP
-   - C. MSTP
-   - D. LACP
-
-9. **Quel état n'est pas un état STP valide ?**
+7. **Quel état n'est pas un état STP valide ?**
    - A. Forwarding
    - B. Listening
    - C. Checking
    - D. Blocking
-
-10. **Quelle action doit être prise pour activer STP sur un switch D-Link via l'interface CLI ?**
-    - A. `stp enable`
-    - B. `spanning-tree activate`
-    - C. `spanning-tree`
-    - D. `enable stp`
 
 #### Correction
 
@@ -600,24 +567,40 @@ Ce guide offre une vue d'ensemble pour configurer STP sur un switch D-Link, gara
 4. **Quel protocole est une version améliorée de STP avec des temps de convergence plus rapides ?**
    - B. RSTP
 
-5. **Quelle commande permet de vérifier l'état du spanning tree sur un switch D-Link via CLI ?**
-   - A. `show spanning-tree`
-
-6. **Dans quel état un port STP apprend-il les adresses MAC mais ne transfère pas encore de données ?**
+5. **Dans quel état un port STP apprend-il les adresses MAC mais ne transfère pas encore de données ?**
    - B. Learning
 
-7. **Quelle est la fonction d'un port désigné dans STP ?**
+6. **Quelle est la fonction d'un port désigné dans STP ?**
    - B. Transférer les données dans un segment réseau spécifique.
 
-8. **Quel protocole permet la gestion de plusieurs instances de spanning tree pour différents VLANs ?**
-   - C. MSTP
-
-9. **Quel état n'est pas un état STP valide ?**
+7. **Quel état n'est pas un état STP valide ?**
    - C. Checking
 
-10. **Quelle action doit être prise pour activer STP sur un switch D-Link via l'interface CLI ?**
-    - C. `spanning-tree`
+## TP Configuration STP sur un Switch D-Link
 
+#### Modèle : DGS-xxxx-xx
+
+Pour configurer le Spanning Tree Protocol sur un commutateur D-Link, voici un exemple de configuration :
+
+1. **Connexion au switch** : Connectez-vous au switch via l'interface web 
+
+2. **Activer STP** :
+   - **Interface Web** :
+     1. Connectez-vous à l'interface web du switch.
+     2. Allez dans la section "Spanning Tree" ou "STP" sous le menu de configuration.
+     3. Activez STP globalement sur le switch.
+     4. Configurez les paramètres globaux tels que le mode (STP, RSTP, MSTP) et le Bridge Priority.
+
+3. **Configurer les ports STP** :
+   - **Interface Web** :
+     1. Allez dans la section "Port Settings" sous "Spanning Tree".
+     2. Configurez les paramètres spécifiques des ports comme le coût du chemin et l'état (Edge Port si connecté à un périphérique de fin).
+
+4. **Vérifier la configuration** :
+   - **Interface Web** :
+     1. Vérifiez l'état du spanning tree dans la section de statut.
+     2. Assurez-vous que les ports et le root bridge sont correctement configurés.
+     3. Tester la configuration en créant des boucles réseau.
 
 # Interconnexion des switchs
 ## Interfaces GBIC 
