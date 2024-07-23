@@ -1,7 +1,7 @@
 # Training Networks July 24th and 25th 2024
 
 ![](./Images/baie_de_brassage.jpg)
-### TP : Découverte de l'encapsulation des protocoles avec Wireshark
+# TP : Découverte de l'encapsulation des protocoles avec Wireshark
 
 #### Objectifs pédagogiques
 - Comprendre le concept d'encapsulation des protocoles dans le modèle OSI.
@@ -769,7 +769,7 @@ La principale différence entre les SFP SX et LX réside dans la longueur d'onde
 - Plus coûteux que les SFP SX mais offrent une plus grande portée.
 - En résumé, les SFP SX sont optimisés pour les courtes distances sur fibre multimode, tandis que les SFP LX permettent des liaisons plus longues sur fibre monomode. - - Le choix dépend de la distance à couvrir et du type de fibre optique utilisé dans le réseau.
 
-## Synthèse sur le Routage IP
+# Synthèse sur le Routage IP
 
 ![](./Images/ARPANET_first_router.jpg)*premier routeur de l'histoire, réseau ARPANET : IMP - 1969*
 
@@ -939,6 +939,7 @@ L'activation de QoS varie en fonction des équipements et des environnements ré
 
 ### Conclusion
 La QoS est une composante essentielle des réseaux modernes, en particulier pour les environnements où la bande passante est partagée entre de nombreuses applications ayant des besoins différents. En permettant la classification, la priorisation, le marquage et la gestion du trafic réseau, QoS assure une meilleure performance, une utilisation optimisée de la bande passante et une expérience utilisateur améliorée.
+
 
 Test [color=#FF0000] texte coloré en vert [/color].
 
