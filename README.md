@@ -10,7 +10,8 @@
 >- Utiliser Wireshark pour capturer et examiner des paquets réseau.
 
 #### Pré-requis
-- Installation de Wireshark sur les ordinateurs des apprenants.
+>[!TIP]
+- Installation de Wireshark sur les ordinateurs.
 - Connaissance de base du modèle OSI et des principaux protocoles réseau.
 
 #### Matériel nécessaire
@@ -93,6 +94,7 @@
 #### Partie 4 : Discussion et conclusion (10 minutes)
 
 1. **Discussion en groupe :**
+>[!TIP]
    - Discutez des observations faites pendant l'analyse.
    - Mettez en évidence comment chaque couche encapsule les données de la couche supérieure.
 
@@ -952,16 +954,15 @@ L'activation de QoS varie en fonction des équipements et des environnements ré
 La QoS est une composante essentielle des réseaux modernes, en particulier pour les environnements où la bande passante est partagée entre de nombreuses applications ayant des besoins différents. En permettant la classification, la priorisation, le marquage et la gestion du trafic réseau, QoS assure une meilleure performance, une utilisation optimisée de la bande passante et une expérience utilisateur améliorée.
 
 >[!NOTE]
->Test message
+
 
 >[!IMPORTANT]
->Test message
+
 
 >[!TIP]
->Test message
+
 
 >[!WARNING]
->Test message
+
 
 >[!CAUTION]
->Test message
