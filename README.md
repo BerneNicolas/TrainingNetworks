@@ -932,20 +932,23 @@ Tester et valider.
 
 ## TP 2 : mise en oeuvre d'un réseau LAN/WAN avec port forwarding.
 
-Voir système.
+>[!TIP]
+>Voir système.
+
 Vous disposez des deux API (un client et un serveur) et un client raspberry. Le serveur écoute sur les ports 502 et 503.
 
 1. Réaliser la configuration du routeur LAN/WAN avec mise en oeuvre du port forwarding.
-2. Tester et valider les échanges avec wireshark.
+2. Tester et valider les échanges avec wireshark en cas de problème de connexion.
 
 
+# ANNEXE
 
-# QOS 
+## QOS 
 ### Synthèse sur la Qualité de Service (QoS)
 
 #### Définition
 >[!NOTE]
-La Qualité de Service (QoS) est un ensemble de technologies et de mécanismes permettant de garantir des performances réseau spécifiques pour différents types de trafic. QoS est crucial dans les réseaux où la bande passante est partagée entre diverses applications et services, en particulier ceux qui ont des exigences strictes en matière de latence, de gigue et de perte de paquets, comme la VoIP, la vidéo en streaming et les applications critiques d'entreprise.
+>La Qualité de Service (QoS) est un ensemble de technologies et de mécanismes permettant de garantir des performances réseau spécifiques pour différents types de trafic. QoS est crucial dans les réseaux où la bande passante est partagée entre diverses applications et services, en particulier ceux qui ont des exigences strictes en matière de latence, de gigue et de perte de paquets, comme la VoIP, la vidéo en streaming et les applications critiques d'entreprise.
 
 #### Principe de Fonctionnement
 Le principe de fonctionnement de la QoS repose sur plusieurs étapes clés :
@@ -993,18 +996,20 @@ L'activation de QoS varie en fonction des équipements et des environnements ré
    - Ajustez les politiques si nécessaire en fonction des besoins en bande passante et des performances observées.
 
 ### Conclusion
-La QoS est une composante essentielle des réseaux modernes, en particulier pour les environnements où la bande passante est partagée entre de nombreuses applications ayant des besoins différents. En permettant la classification, la priorisation, le marquage et la gestion du trafic réseau, QoS assure une meilleure performance, une utilisation optimisée de la bande passante et une expérience utilisateur améliorée.
+>[!NOTE]
+>La QoS est une composante essentielle des réseaux modernes, en particulier pour les environnements où la bande passante est partagée entre de nombreuses applications ayant des besoins différents. En permettant la classification, la priorisation, le marquage et la gestion du trafic réseau, QoS assure une meilleure performance, une utilisation optimisée de la bande passante et une expérience utilisateur améliorée.
 
 >[!NOTE]
-
+>Note : july 2024
 
 >[!IMPORTANT]
-
+>Important : july 2024
 
 >[!TIP]
-
+>Tip : july 2024
 
 >[!WARNING]
-
+>Warning : july 2024
 
 >[!CAUTION]
+>Caution : july 2024
