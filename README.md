@@ -96,8 +96,8 @@
 
 1. **Discussion en groupe :**
 >[!TIP]
-   - Discutez des observations faites pendant l'analyse.
-   - Mettez en évidence comment chaque couche encapsule les données de la couche supérieure.
+>   - Discutez des observations faites pendant l'analyse.
+>   - Mettez en évidence comment chaque couche encapsule les données de la couche supérieure.
 
 2. **Questions et réponses :**
 
@@ -112,7 +112,8 @@
 >Les masques réseaux et la notation CIDR (Classless Inter-Domain Routing) sont essentiels pour la gestion et la structuration des réseaux IP. Ils permettent de segmenter les réseaux en sous-réseaux et de gérer efficacement l'adressage IP.
 
 #### Masques Réseaux en IPv4
-Un **masque réseau** est une séquence de 32 bits utilisée pour diviser une adresse IP en deux parties: l'adresse du réseau et l'adresse de l'hôte. Il est souvent représenté sous forme de quatre octets décimaux, par exemple, `255.255.255.0`.
+>[!NOTE]
+>Un **masque réseau** est une séquence de 32 bits utilisée pour diviser une adresse IP en deux parties: l'adresse du réseau et l'adresse de l'hôte. Il est souvent représenté sous forme de quatre octets décimaux, par exemple, `255.255.255.0`.
 
 - **Fonctionnement**: 
   - Les bits à `1` dans le masque réseau désignent la partie réseau de l'adresse IP.
@@ -170,22 +171,25 @@ Les adresses IP privées sont utilisées au sein des réseaux locaux (LAN) pour 
 #### Plages d'Adresses IPv4 Privées
 
 1. **Classe A**:
-   - **Plage d'adresses**: `10.0.0.0` à `10.255.255.255`
-   - **Masque par défaut**: `255.0.0.0` (notation CIDR: `/8`)
-   - **Nombre d'adresses disponibles**: 16 777 216 adresses (2^24)
-   - **Utilisation typique**: Idéale pour les très grands réseaux, tels que les campus universitaires ou les entreprises avec plusieurs sites.
+>[!TIP]
+>   - **Plage d'adresses**: `10.0.0.0` à `10.255.255.255`
+>   - **Masque par défaut**: `255.0.0.0` (notation CIDR: `/8`)
+>   - **Nombre d'adresses disponibles**: 16 777 216 adresses (2^24)
+>   - **Utilisation typique**: Idéale pour les très grands réseaux, tels que les campus universitaires ou les entreprises avec plusieurs sites.
 
 2. **Classe B**:
-   - **Plage d'adresses**: `172.16.0.0` à `172.31.255.255`
-   - **Masque par défaut**: `255.240.0.0` (notation CIDR: `/12`)
-   - **Nombre d'adresses disponibles**: 1 048 576 adresses (2^20)
-   - **Utilisation typique**: Convient aux réseaux de taille moyenne à grande, tels que les réseaux d'entreprise multi-sites.
+>[!TIP]
+>   - **Plage d'adresses**: `172.16.0.0` à `172.31.255.255`
+>   - **Masque par défaut**: `255.240.0.0` (notation CIDR: `/12`)
+>   - **Nombre d'adresses disponibles**: 1 048 576 adresses (2^20)
+>   - **Utilisation typique**: Convient aux réseaux de taille moyenne à grande, >tels que les réseaux d'entreprise multi-sites.
 
 3. **Classe C**:
-   - **Plage d'adresses**: `192.168.0.0` à `192.168.255.255`
-   - **Masque par défaut**: `255.255.255.0` (notation CIDR: `/24`)
-   - **Nombre d'adresses disponibles**: 65 536 adresses (2^16)
-   - **Utilisation typique**: Idéale pour les petits réseaux, tels que les réseaux domestiques ou les petites entreprises.
+>[!TIP]
+>   - **Plage d'adresses**: `192.168.0.0` à `192.168.255.255`
+>   - **Masque par défaut**: `255.255.255.0` (notation CIDR: `/24`)
+>   - **Nombre d'adresses disponibles**: 65 536 adresses (2^16)
+>   - **Utilisation typique**: Idéale pour les petits réseaux, tels que les réseaux domestiques ou les petites entreprises.
 
 #### Caractéristiques et Avantages des Adresses Privées
 
@@ -209,7 +213,8 @@ Les adresses IP privées sont utilisées au sein des réseaux locaux (LAN) pour 
    - Segmentation du réseau en plusieurs sous-réseaux pour une gestion et une organisation efficaces.
 
 #### Conclusion
-Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial dans la gestion des réseaux internes, offrant sécurité, flexibilité et une utilisation efficace des adresses IP. Elles permettent aux organisations de tous types et de toutes tailles de structurer leurs réseaux de manière efficace, tout en conservant les adresses IP publiques pour les communications externes.
+>[!NOTE]
+>Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial dans la gestion des réseaux internes, offrant sécurité, flexibilité et une utilisation efficace des adresses IP. Elles permettent aux organisations de tous types et de toutes tailles de structurer leurs réseaux de manière efficace, tout en conservant les adresses IP publiques pour les communications externes.
 
 # ETHERNET
 
@@ -224,15 +229,16 @@ Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial da
 #### Fonctionnement du Protocole Ethernet
 
 1. **Trames Ethernet (Ethernet Frames)**:
-   - Les données sur un réseau Ethernet sont transmises sous forme de trames. Une trame Ethernet encapsule les données utilisateur avec des en-têtes et des champs de contrôle.
-   - **Structure d'une trame Ethernet**:
-     - **Préambule**: Séquence de 7 octets utilisée pour synchroniser les horloges des dispositifs de réception.
-     - **SFD (Start Frame Delimiter)**: Indique le début de la trame (1 octet).
-     - **Adresse MAC de destination**: 6 octets.
-     - **Adresse MAC source**: 6 octets.
-     - **Type/EtherType**: 2 octets, indique le protocole de couche supérieure encapsulé dans la trame.
-     - **Données**: Charge utile (46 à 1500 octets), contenant les données utilisateur et les en-têtes des couches supérieures.
-     - **FCS (Frame Check Sequence)**: 4 octets utilisés pour la détection d'erreurs.
+>[!TIP]
+>   - Les données sur un réseau Ethernet sont transmises sous forme de trames. Une trame Ethernet encapsule les données utilisateur avec des en-têtes et des champs de contrôle.
+>   - **Structure d'une trame Ethernet**:
+>     - **Préambule**: Séquence de 7 octets utilisée pour synchroniser les horloges des dispositifs de réception.
+>     - **SFD (Start Frame Delimiter)**: Indique le début de la trame (1 octet).
+>     - **Adresse MAC de destination**: 6 octets.
+>     - **Adresse MAC source**: 6 octets.
+>     - **Type/EtherType**: 2 octets, indique le protocole de couche supérieure encapsulé dans la trame.
+>     - **Données**: Charge utile (46 à 1500 octets), contenant les données utilisateur et les en-têtes des couches supérieures.
+>     - **FCS (Frame Check Sequence)**: 4 octets utilisés pour la détection d'erreurs.
 
 2. **Transmission et Réception**:
    - **Envoi**: L'émetteur crée un cadre Ethernet avec les adresses MAC de destination et source, encapsule les données, et ajoute une FCS pour l'intégrité.
@@ -241,7 +247,8 @@ Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial da
 #### Adresses MAC
 
 1. **Définition**:
-   - Une **adresse MAC (Media Access Control)** est une adresse physique unique assignée à chaque interface réseau. Elle est codée sur 48 bits (6 octets) et est généralement représentée sous forme hexadécimale (par exemple, `00:1A:2B:3C:4D:5E`).
+>[!NOTE]
+>   - Une **adresse MAC (Media Access Control)** est une adresse physique unique assignée à chaque interface réseau. Elle est codée sur 48 bits (6 octets) et est généralement représentée sous forme hexadécimale (par exemple, `00:1A:2B:3C:4D:5E`).
 
 2. **Structure**:
    - **OUI (Organizationally Unique Identifier)**: Les 24 premiers bits, identifiant le fabricant.
@@ -255,10 +262,11 @@ Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial da
 #### Encapsulation
 
 1. **Définition**:
-   - **Encapsulation** est le processus d'ajouter des en-têtes et des informations de contrôle autour des données utilisateur à chaque couche du modèle OSI. Cela permet de transporter les données à travers les différents médias et protocoles du réseau.
-
-2. **Décapsulation**:
-   - À la réception, chaque couche décapsule les données en enlevant les en-têtes ajoutés par la couche correspondante à l'émetteur, jusqu'à ce que les données utilisateur soient récupérées.
+>[!TIP] 
+>  - **Encapsulation** est le processus d'ajouter des en-têtes et des informations de contrôle autour des données utilisateur à chaque couche du modèle OSI. Cela permet de transporter les données à travers les différents médias et protocoles du réseau.
+>[!TIP]
+>2. **Décapsulation**:
+>   - À la réception, chaque couche décapsule les données en enlevant les en-têtes ajoutés par la couche correspondante à l'émetteur, jusqu'à ce que les données utilisateur soient récupérées.
 
 #### Commandes Associées
 
@@ -294,9 +302,10 @@ L'**Address Resolution Protocol (ARP)** est un protocole crucial dans les résea
 #### Fonctionnement de l'ARP
 
 1. **Résolution d'adresse**:
-   - Lorsqu'un appareil sur un réseau local souhaite communiquer avec un autre appareil, il doit connaître l'adresse MAC de l'appareil cible.
-   - Si l'adresse MAC n'est pas connue, l'appareil émetteur envoie une requête ARP sur le réseau. Cette requête est un message broadcast qui demande "Qui a l'adresse IP x.x.x.x ?"
-   - L'appareil possédant l'adresse IP demandée répond avec une réponse ARP, fournissant son adresse MAC.
+>[!TIP]
+>   - Lorsqu'un appareil sur un réseau local souhaite communiquer avec un autre appareil, il doit connaître l'adresse MAC de l'appareil cible.
+>   - Si l'adresse MAC n'est pas connue, l'appareil émetteur envoie une requête ARP sur le réseau. Cette requête est un message broadcast qui demande "Qui a l'adresse IP x.x.x.x ?"
+>   - L'appareil possédant l'adresse IP demandée répond avec une réponse ARP, fournissant son adresse MAC.
 
 2. **Requête ARP**:
    - **Broadcast**: La requête ARP est envoyée à tous les appareils sur le réseau local.
@@ -375,10 +384,11 @@ Un VLAN (Virtual Local Area Network) est une technologie qui permet de segmenter
 4. **Gestion simplifiée** : Ils simplifient l'administration du réseau en regroupant les utilisateurs selon leurs fonctions ou leurs besoins de sécurité.
 
 #### Fonctionnement
-- **Tagging** : Les VLAN utilisent des étiquettes (tags) pour identifier les trames appartenant à un VLAN spécifique. Le standard le plus courant pour le tagging VLAN est IEEE 802.1Q.
-- **Ports Access et Trunk** :
-  - **Ports Access** : Un port access est associé à un seul VLAN et reçoit des trames non étiquetées.
-  - **Ports Trunk** : Un port trunk peut transporter des trames de plusieurs VLANs, chaque trame étant étiquetée avec l'identifiant VLAN approprié.
+>[!TIP]
+>- **Tagging** : Les VLAN utilisent des étiquettes (tags) pour identifier les trames appartenant à un VLAN spécifique. Le standard le plus courant pour le tagging VLAN est IEEE 802.1Q.
+>- **Ports Access et Trunk** :
+>     - **Ports Access** : Un port access est associé à un seul VLAN et reçoit des trames non étiquetées.
+>     - **Ports Trunk** : Un port trunk peut transporter des trames de plusieurs VLANs, chaque trame étant étiquetée avec l'identifiant VLAN approprié.
 
 #### Types de VLAN
 1. **Data VLAN** : Utilisé pour le trafic utilisateur.
@@ -394,6 +404,7 @@ La configuration des VLAN se fait principalement sur les commutateurs réseau (s
 
 ### Quizz sur les VLAN
 
+>[!TIP]
 #### Questions
 1. Qu'est-ce qu'un VLAN ?
 2. Quel est le principal avantage des VLAN en termes de sécurité ?
