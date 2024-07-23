@@ -273,8 +273,7 @@ Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial da
 
 Le protocole Ethernet, avec ses adresses MAC uniques et son mécanisme d'encapsulation, permet une communication fiable et structurée entre les dispositifs connectés, tout en offrant des mécanismes robustes pour l'intégrité des données et la gestion des erreurs. Les concepts d'ARP, d'adresses MAC et d'encapsulation sont fondamentaux pour comprendre le fonctionnement et la gestion des réseaux Ethernet.
 
-### Synthèse sur les fibres optiques
-![](./Images/Fibre_Image4.png)
+### Synthèse sur câbles Ethernet
 ![T568B](./Images/T568B_DROIT_Image5.png)
 ![T568A](./Images/T568A_DROIT_Image6.png)
 
@@ -743,9 +742,12 @@ Pour configurer le Spanning Tree Protocol sur un commutateur D-Link, voici un ex
      2. Assurez-vous que les ports et le root bridge sont correctement configurés.
      3. Tester la configuration en créant des boucles réseau.
 
-# Interconnexion des switchs
+# Interconnexion par fibre optique des switchs
 
 ![](./Images/Image1.jpg)
+
+## Synthèse sur les fibres optiques
+![](./Images/Fibre_Image4.png)
 ## Interfaces GBIC 
 ![SFP SX](./Images/Simplex-BiDi-SFP-vs-Duplex-SFP.jpg)
 ## Types de fibre
@@ -766,6 +768,121 @@ La principale différence entre les SFP SX et LX réside dans la longueur d'onde
 - Conviennent mieux pour les connexions inter-bâtiments et les réseaux métropolitains.
 - Plus coûteux que les SFP SX mais offrent une plus grande portée.
 - En résumé, les SFP SX sont optimisés pour les courtes distances sur fibre multimode, tandis que les SFP LX permettent des liaisons plus longues sur fibre monomode. - - Le choix dépend de la distance à couvrir et du type de fibre optique utilisé dans le réseau.
+
+## Synthèse sur le Routage IP
+
+![](./Images/ARPANET_first_router.jpg)*premier routeur de l'histoire, réseau ARPANET : IMP - 1969*
+
+![](./Images/Interface-Message-Processor-IMP-first-packet-router-for-the-ARPANET-designed-in-the.png)
+
+### Introduction au Routage IP
+
+Le routage IP est le processus de transfert des paquets de données entre différents réseaux à travers un routeur. Le routeur examine l'adresse IP de destination de chaque paquet et utilise des tables de routage pour déterminer le chemin optimal pour acheminer ces paquets. Le routage est essentiel pour permettre la communication entre sous-réseaux distincts, que ce soit au sein d'une organisation ou à travers l'Internet.
+
+### Fonctionnement du Routage IP
+
+1. **Tables de Routage** : Les routeurs maintiennent des tables de routage contenant des informations sur les routes vers différentes destinations. Chaque entrée dans la table de routage spécifie un réseau de destination, un masque de sous-réseau, et la passerelle suivante à utiliser pour atteindre ce réseau.
+   
+2. **Protocole de Routage** : Les protocoles de routage, comme OSPF, BGP et RIP, permettent aux routeurs d'échanger des informations de routage et de mettre à jour leurs tables de routage. Ces protocoles peuvent être basés sur la distance (RIP), l'état des liens (OSPF) ou des chemins externes (BGP).
+
+3. **Décision de Routage** : Lorsqu'un paquet arrive sur un routeur, ce dernier examine l'adresse IP de destination et consulte sa table de routage pour déterminer la meilleure route à suivre. Si une route appropriée est trouvée, le paquet est transféré à la passerelle suivante ou à la destination finale.
+
+### Commandes de Base de la Commande `route` sous DOS (Windows)
+
+La commande `route` sous Windows permet de manipuler la table de routage IP. Voici quelques commandes de base :
+
+1. **Afficher la Table de Routage** :
+   ```cmd
+   route print
+   ```
+   Cette commande affiche la table de routage actuelle.
+
+2. **Ajouter une Route** :
+   ```cmd
+   route add [destination] MASK [masque] [passerelle]
+   ```
+   Exemple :
+   ```cmd
+   route add 192.168.2.0 MASK 255.255.255.0 192.168.1.1
+   ```
+   Cette commande ajoute une route vers le réseau 192.168.2.0/24 via la passerelle 192.168.1.1.
+
+3. **Supprimer une Route** :
+   ```cmd
+   route delete [destination]
+   ```
+   Exemple :
+   ```cmd
+   route delete 192.168.2.0
+   ```
+   Cette commande supprime la route vers le réseau 192.168.2.0.
+
+4. **Modifier une Route** :
+   ```cmd
+   route change [destination] MASK [masque] [nouvelle_passerelle]
+   ```
+   Exemple :
+   ```cmd
+   route change 192.168.2.0 MASK 255.255.255.0 192.168.1.2
+   ```
+   Cette commande modifie la route existante vers le réseau 192.168.2.0/24 pour utiliser la passerelle 192.168.1.2.
+
+### Échanges Client/Serveur et Connexion TCP à 3 États
+
+#### Échanges Client/Serveur
+
+Les échanges client/serveur sont la base de nombreuses applications réseau. Le client initie une demande de service, et le serveur répond avec les données ou le service demandé. Ce modèle est utilisé dans des applications comme le web (HTTP), le courrier électronique (SMTP, IMAP), et les bases de données (SQL).
+
+- **Client** : Envoie une requête au serveur.
+- **Serveur** : Traite la requête et envoie une réponse au client.
+
+#### Connexion TCP à 3 États
+
+Le protocole TCP (Transmission Control Protocol) utilise une séquence de trois états pour établir une connexion fiable entre un client et un serveur. Cette séquence, appelée "handshake à trois voies", est la suivante :
+
+1. **SYN (Synchronize)** :
+   - Le client envoie un segment SYN au serveur pour initier une connexion. Ce segment contient un numéro de séquence initial (ISN) du client.
+   - Exemple : Le client envoie SYN avec ISN = 1000.
+
+2. **SYN-ACK (Synchronize-Acknowledge)** :
+   - Le serveur répond avec un segment SYN-ACK, qui accuse réception du SYN du client en incluant le numéro de séquence du client + 1, et envoie son propre numéro de séquence initial.
+   - Exemple : Le serveur envoie SYN-ACK avec ISN = 2000, ACK = 1001.
+
+3. **ACK (Acknowledge)** :
+   - Le client envoie un segment ACK pour accuser réception du SYN-ACK du serveur. La connexion est maintenant établie.
+   - Exemple : Le client envoie ACK avec SEQ = 1001, ACK = 2001.
+
+Après cette séquence, le client et le serveur peuvent échanger des données de manière fiable, avec TCP garantissant la livraison, l'ordre et la vérification des erreurs.
+
+### Conclusion
+
+Le routage IP est une composante cruciale des réseaux modernes, permettant l'acheminement des paquets de données entre différents réseaux. Les commandes de base de la commande `route` sous Windows permettent de manipuler la table de routage pour gérer le flux des données. Les échanges client/serveur et la connexion TCP à 3 états assurent des communications fiables et structurées entre les applications réseau.
+
+## TP 1 : mise en oeuvre d'un réseau LAN/WAN avec port forwarding.
+
+Au préalable, vous devez constituer 3 ou 4 équipes.
+
+1.	Etablir et compléter le schéma d’un mini-réseau (voir ci-dessous).
+
+![](./Images/Plan%20d'adressage%20LAN_WAN.JPG)
+
+2.	Mettre en œuvre le NAT dynamique (les machines du réseau LAN privé doivent pouvoir accéder au réseau WAN public).
+Adresse réseau LAN privé    : à définir au choix par chaque équipe.
+Adresse réseau WAN public   : à définir par l'ensemble des équipes
+Tester et valider en pinguant les adresses WAN des différents routeurs.
+
+3.	Mettre en œuvre le NAPT Port Forwarding permettant l'accès à un serveur de test port 42000 depuis le réseau WAN public. 
+Tester et valider.
+
+4.	Faire des captures de trames avec Ethereal/Wireshark et comparer les échanges entre les machines (identifier les trames de traduction d’adresses, notamment au niveau des ports).
+
+## TP 2 : mise en oeuvre d'un réseau LAN/WAN avec port forwarding.
+
+Voir système.
+Vous disposez des deux API (un client et un serveur) et un client raspberry. Le serveur écoute sur les ports 502 et 503.
+
+1. Réaliser la configuration du routeur LAN/WAN avec mise en oeuvre du port forwarding.
+2. Tester et valider les échanges avec wireshark.
 
 
 
@@ -823,35 +940,6 @@ L'activation de QoS varie en fonction des équipements et des environnements ré
 ### Conclusion
 La QoS est une composante essentielle des réseaux modernes, en particulier pour les environnements où la bande passante est partagée entre de nombreuses applications ayant des besoins différents. En permettant la classification, la priorisation, le marquage et la gestion du trafic réseau, QoS assure une meilleure performance, une utilisation optimisée de la bande passante et une expérience utilisateur améliorée.
 
-# Routeurs
-
-## TP 1 : mise en oeuvre d'un réseau LAN/WAN avec port forwarding.
-
-Au préalable, vous devez constituer 3 ou 4 équipes.
-
-1.	Etablir et compléter le schéma d’un mini-réseau (voir ci-dessous).
-
-![](./Images/Plan%20d'adressage%20LAN_WAN.JPG)
-
-2.	Mettre en œuvre le NAT dynamique (les machines du réseau LAN privé doivent pouvoir accéder au réseau WAN public).
-Adresse réseau LAN privé    : à définir au choix par chaque équipe.
-Adresse réseau WAN public   : à définir par l'ensemble des équipes
-Tester et valider en pinguant les adresses WAN des différents routeurs.
-
-3.	Mettre en œuvre le NAPT Port Forwarding permettant l'accès à un serveur de test port 42000 depuis le réseau WAN public. 
-Tester et valider.
-
-4.	Faire des captures de trames avec Ethereal/Wireshark et comparer les échanges entre les machines (identifier les trames de traduction d’adresses, notamment au niveau des ports).
-
-## TP 2 : mise en oeuvre d'un réseau LAN/WAN avec port forwarding.
-
-Voir système.
-Vous disposez des deux API (un client et un serveur) et un client raspberry. Le serveur écoute sur les ports 502 et 503.
-
-1. Réaliser la configuration du routeur LAN/WAN avec mise en oeuvre du port forwarding.
-2. Tester et valider les échanges avec wireshark.
-
-
-
+Test [color=#FF0000] texte coloré en vert [/color].
 
 
