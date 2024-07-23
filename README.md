@@ -215,6 +215,7 @@ Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial da
 ![](./Images/Image2.jpg)
 
 #### Introduction
+>[!NOTE]
 **Ethernet** est une technologie de réseau largement utilisée pour les réseaux locaux (LAN). Il définit les règles et les normes pour la communication des données via des câbles physiques. Ethernet fonctionne au niveau 2 (couche liaison de données) du modèle OSI et utilise des adresses MAC pour identifier de manière unique chaque appareil sur un réseau.
 
 #### Fonctionnement du Protocole Ethernet
@@ -274,7 +275,7 @@ Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial da
 
 
 #### Conclusion
-
+>[!NOTE]
 Le protocole Ethernet, avec ses adresses MAC uniques et son mécanisme d'encapsulation, permet une communication fiable et structurée entre les dispositifs connectés, tout en offrant des mécanismes robustes pour l'intégrité des données et la gestion des erreurs. Les concepts d'ARP, d'adresses MAC et d'encapsulation sont fondamentaux pour comprendre le fonctionnement et la gestion des réseaux Ethernet.
 
 ### Synthèse sur câbles Ethernet
@@ -284,6 +285,7 @@ Le protocole Ethernet, avec ses adresses MAC uniques et son mécanisme d'encapsu
 ### Synthèse sur le Fonctionnement d'ARP (Address Resolution Protocol)
 
 #### Introduction
+>[!NOTE]
 L'**Address Resolution Protocol (ARP)** est un protocole crucial dans les réseaux IP, utilisé pour mapper les adresses IP (niveau 3 du modèle OSI) aux adresses MAC (niveau 2 du modèle OSI). Cela permet la communication sur les réseaux locaux (LAN).
 
 #### Fonctionnement de l'ARP
@@ -353,13 +355,14 @@ La commande `arp` sous DOS (ou Command Prompt sous Windows) permet d'interagir a
    - Configuration de tables ARP statiques pour des appareils critiques afin de prévenir les changements de correspondances IP-MAC et augmenter la sécurité.
 
 #### Conclusion
-
+>[!NOTE]
 L'ARP est un protocole fondamental pour la communication sur les réseaux locaux, facilitant la correspondance entre les adresses IP et MAC. Les commandes DOS associées à ARP offrent des outils puissants pour gérer, diagnostiquer et sécuriser le cache ARP, aidant les administrateurs réseau à maintenir une infrastructure réseau fonctionnelle et sécurisée.
 
 # VLAN
 ![](./Images/Image2.jpg)
 ### Synthèse sur les VLAN
 #### Définition
+>[!NOTE]
 Un VLAN (Virtual Local Area Network) est une technologie qui permet de segmenter un réseau physique en plusieurs réseaux logiques distincts. Les VLAN permettent de regrouper des périphériques réseau situés à des endroits différents comme s'ils faisaient partie du même réseau local.
 
 #### Avantages
@@ -488,6 +491,7 @@ La configuration des VLAN se fait principalement sur les commutateurs réseau (s
 ### VLAN par Port
 ![](./Images/Image2.jpg)
 #### Définition
+>[!NOTE]
 Le VLAN par port, également connu sous le nom de VLAN statique, est une méthode de configuration des VLANs où chaque port d'un commutateur est associé manuellement à un VLAN spécifique. Les périphériques connectés à ces ports sont alors membres de ce VLAN particulier, quelle que soit leur adresse MAC ou tout autre critère.
 
 #### Avantages
@@ -505,7 +509,7 @@ Le VLAN par port, également connu sous le nom de VLAN statique, est une méthod
 4. **Complexité Accrue dans les Environnements Dynamiques** : Dans les environnements où les utilisateurs ou les périphériques changent fréquemment de place, la configuration manuelle des VLANs par port peut devenir complexe et laborieuse.
 
 ### Conclusion
-
+>[!NOTE]
 Le VLAN par port est une méthode de segmentation réseau facile à comprendre et à mettre en œuvre, particulièrement adaptée aux petits réseaux ou aux environnements où la topologie ne change pas fréquemment. Cependant, dans les réseaux de grande taille ou dynamiques, cette méthode peut devenir difficile à gérer et manque de flexibilité. Les administrateurs réseau doivent peser ces avantages et inconvénients pour déterminer si cette méthode convient à leurs besoins spécifiques.
 
 # TP Réseau : Mise en œuvre des VLANs et du Trunking sur des Switches L2
@@ -586,6 +590,7 @@ Ce TP vous a permis de configurer des VLANs sur des switches L2 et de mettre en 
 ### Synthèse sur le Spanning Tree Protocol (STP)
 
 #### Définition
+>[!NOTE]
 Le Spanning Tree Protocol (STP) est un protocole de réseau de niveau 2 (couche de liaison de données) utilisé pour prévenir les boucles de commutation dans les réseaux locaux (LAN). Les boucles de commutation peuvent entraîner des tempêtes de broadcast, des duplications de trames, et des saturations de la bande passante, rendant le réseau inutilisable.
 
 #### Fonctionnement
@@ -780,7 +785,7 @@ La principale différence entre les SFP SX et LX réside dans la longueur d'onde
 ![](./Images/Interface-Message-Processor-IMP-first-packet-router-for-the-ARPANET-designed-in-the.png)
 
 ### Introduction au Routage IP
-
+>[!NOTE]
 Le routage IP est le processus de transfert des paquets de données entre différents réseaux à travers un routeur. Le routeur examine l'adresse IP de destination de chaque paquet et utilise des tables de routage pour déterminer le chemin optimal pour acheminer ces paquets. Le routage est essentiel pour permettre la communication entre sous-réseaux distincts, que ce soit au sein d'une organisation ou à travers l'Internet.
 
 ### Fonctionnement du Routage IP
@@ -834,7 +839,7 @@ La commande `route` sous Windows permet de manipuler la table de routage IP. Voi
 ### Échanges Client/Serveur et Connexion TCP à 3 États
 
 #### Échanges Client/Serveur
-
+>[!NOTE]
 Les échanges client/serveur sont la base de nombreuses applications réseau. Le client initie une demande de service, et le serveur répond avec les données ou le service demandé. Ce modèle est utilisé dans des applications comme le web (HTTP), le courrier électronique (SMTP, IMAP), et les bases de données (SQL).
 
 - **Client** : Envoie une requête au serveur.
@@ -859,7 +864,7 @@ Le protocole TCP (Transmission Control Protocol) utilise une séquence de trois 
 Après cette séquence, le client et le serveur peuvent échanger des données de manière fiable, avec TCP garantissant la livraison, l'ordre et la vérification des erreurs.
 
 ### Conclusion
-
+>[!NOTE]
 Le routage IP est une composante cruciale des réseaux modernes, permettant l'acheminement des paquets de données entre différents réseaux. Les commandes de base de la commande `route` sous Windows permettent de manipuler la table de routage pour gérer le flux des données. Les échanges client/serveur et la connexion TCP à 3 états assurent des communications fiables et structurées entre les applications réseau.
 
 ## TP 1 : mise en oeuvre d'un réseau LAN/WAN avec port forwarding.
@@ -894,6 +899,7 @@ Vous disposez des deux API (un client et un serveur) et un client raspberry. Le 
 ### Synthèse sur la Qualité de Service (QoS)
 
 #### Définition
+>[!NOTE]
 La Qualité de Service (QoS) est un ensemble de technologies et de mécanismes permettant de garantir des performances réseau spécifiques pour différents types de trafic. QoS est crucial dans les réseaux où la bande passante est partagée entre diverses applications et services, en particulier ceux qui ont des exigences strictes en matière de latence, de gigue et de perte de paquets, comme la VoIP, la vidéo en streaming et les applications critiques d'entreprise.
 
 #### Principe de Fonctionnement
