@@ -548,12 +548,19 @@ Le VLAN par port est une méthode de segmentation réseau facile à comprendre e
 ## Partie 1 : Configuration des VLANs sur un Switch L2
 
 ### Étape 1 : Configuration de base du Switch 1
-1. Recherchez les switchs sur le réseau LAN (utilisez les outils logiciels mis à disposition, ne pas faire de reset matériel !).
-Note : le login et le password ont par défaut les valeurs d'usine.  
-Connectez-vous au switch via le site web embarqué.
-2. Entrez en mode configuration globale et modifier l'adresse IP du switch.
+1. Recherchez les switchs sur le réseau LAN. Pour se faire, utilisez les outils logiciels mis à disposition, 
+>[!WARNING]
+>ne pas faire de reset matériel !.
+
+2. Connectez-vous au switch via le site web embarqué.
+>[!NOTE]
+>le login et le password ont par défaut les valeurs d'usine. 
+
+3. Entrez en mode configuration globale et modifier l'adresse IP du switch.
 - Adresse IP : 192.168.7.x/24 avec x le numéro du groupe qui vous a été attribué. 
-- Note importante : pensez à faire un "Save" de la configuration du switch et pas uniquement un "Apply". Un "Save" permet de sauvegarder la configuration avec un reboot. 
+
+>[!WARNING] 
+>Pensez à faire un "Save" de la configuration du switch et pas uniquement un "Apply". Un "Save" permet de sauvegarder la configuration avec un reboot. 
     
 ### Étape 2 : Création des VLANs
 1. Créez trois VLANs (VLAN 10, VLAN 20, VLAN 30).
@@ -613,7 +620,8 @@ Ce TP vous a permis de configurer des VLANs sur des switches L2 et de mettre en 
 Le Spanning Tree Protocol (STP) est un protocole de réseau de niveau 2 (couche de liaison de données) utilisé pour prévenir les boucles de commutation dans les réseaux locaux (LAN). Les boucles de commutation peuvent entraîner des tempêtes de broadcast, des duplications de trames, et des saturations de la bande passante, rendant le réseau inutilisable.
 
 #### Fonctionnement
-STP fonctionne en créant une arborescence logique (spanning tree) à partir de la topologie physique du réseau. Il désactive les liens redondants pour garantir qu'il n'y a qu'un seul chemin actif entre deux périphériques du réseau. Les principales étapes du fonctionnement de STP sont les suivantes :
+>[!TIP]
+>STP fonctionne en créant une arborescence logique (spanning tree) à partir de la topologie physique du réseau. Il désactive les liens redondants pour garantir qu'il n'y a qu'un seul chemin actif entre deux périphériques du réseau. Les principales étapes du fonctionnement de STP sont les suivantes :
 
 1. **Élection du Root Bridge** : Le switch avec le Bridge ID le plus bas est élu Root Bridge.
 2. **Calcul des coûts de chemin** : Chaque switch calcule le coût du chemin vers le Root Bridge.
@@ -622,7 +630,8 @@ STP fonctionne en créant une arborescence logique (spanning tree) à partir de 
 5. **Blocage des ports redondants** : Les ports non désignés et non root sont mis en état de blocage pour éviter les boucles.
 
 ### Algorithme STP
-L'algorithme STP procède en plusieurs phases : élection du commutateur racine, détermination du port racine sur chaque commutateur, détermination du port désigné sur chaque segment, blocage des autres ports.
+>[!TIP]
+>algorithme STP procède en plusieurs phases : élection du commutateur racine, détermination du port racine sur chaque commutateur, détermination du port désigné sur chaque segment, blocage des autres ports.
 
 1. (voir figure ci-dessous) 
 - Les cases numérotées représentent des commutateurs (le numéro étant le bridge ID). Les nuages repérés par des lettres représentent les segments du réseau.
@@ -676,6 +685,9 @@ Les ports peuvent se trouver dans l'un des états suivants :
 - **MSTP (802.1s)** : Multiple Spanning Tree Protocol, qui permet plusieurs instances de spanning tree pour différents VLANs.
 
 ### QCM sur le Spanning Tree Protocol (STP)
+
+>[!TIP]
+>QCM sur le spanning Tree Protocol
 
 #### Questions
 
