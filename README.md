@@ -611,7 +611,8 @@ Le VLAN par port est une méthode de segmentation réseau facile à comprendre e
     - PC sur Switch 1 (port 17, VLAN 30) doit pouvoir pinguer un PC sur Switch 2 (port 17, VLAN 30).
 
 ## Conclusion
-Ce TP vous a permis de configurer des VLANs sur des switches L2 et de mettre en place une liaison Trunk pour transporter les VLANs entre deux switches. Vous avez également appris à vérifier la configuration et à tester la connectivité des VLANs.
+>[!NOTE]
+>Ce TP vous a permis de configurer des VLANs sur des switches L2 et de mettre en place une liaison Trunk pour transporter les VLANs entre deux switches. Vous avez également appris à vérifier la configuration et à tester la connectivité des VLANs.
 
 # SPANNING TREE
 ![](./Images/7abed25d-16f9-4b4f-843f-01be21c09d13.jpg)
@@ -668,13 +669,16 @@ Le Spanning Tree Protocol (STP) est un protocole de réseau de niveau 2 (couche 
 
 ![STP Figure 6](./Images/STP_6.jpg)*d'après Wikipedia*
 
+
 #### États des ports dans STP
-Les ports peuvent se trouver dans l'un des états suivants :
-- **Blocking** : Le port ne transfère pas de données, il écoute seulement les BPDU (Bridge Protocol Data Units).
-- **Listening** : Le port prépare la transition vers l'état suivant, il ne transfère toujours pas de données mais peut envoyer et recevoir des BPDUs.
-- **Learning** : Le port apprend les adresses MAC mais ne transfère toujours pas de données utilisateur.
-- **Forwarding** : Le port transfère les données et apprend les adresses MAC.
-- **Disabled** : Le port ne participe pas au STP et ne transfère pas de données.
+
+>[!TIP]
+>Les ports peuvent se trouver dans l'un des états suivants :
+>- **Blocking** : Le port ne transfère pas de données, il écoute seulement les BPDU (Bridge Protocol Data Units).
+>- **Listening** : Le port prépare la transition vers l'état suivant, il ne transfère toujours pas de données mais peut envoyer et recevoir des BPDUs.
+>- **Learning** : Le port apprend les adresses MAC mais ne transfère toujours pas de données utilisateur.
+>- **Forwarding** : Le port transfère les données et apprend les adresses MAC.
+>- **Disabled** : Le port ne participe pas au STP et ne transfère pas de données.
 
 #### Avantages
 - **Prévention des boucles** : STP empêche les boucles dans le réseau, assurant ainsi un fonctionnement stable.
@@ -882,17 +886,18 @@ Les échanges client/serveur sont la base de nombreuses applications réseau. Le
 
 Le protocole TCP (Transmission Control Protocol) utilise une séquence de trois états pour établir une connexion fiable entre un client et un serveur. Cette séquence, appelée "handshake à trois voies", est la suivante :
 
-1. **SYN (Synchronize)** :
-   - Le client envoie un segment SYN au serveur pour initier une connexion. Ce segment contient un numéro de séquence initial (ISN) du client.
-   - Exemple : Le client envoie SYN avec ISN = 1000.
-
-2. **SYN-ACK (Synchronize-Acknowledge)** :
-   - Le serveur répond avec un segment SYN-ACK, qui accuse réception du SYN du client en incluant le numéro de séquence du client + 1, et envoie son propre numéro de séquence initial.
-   - Exemple : Le serveur envoie SYN-ACK avec ISN = 2000, ACK = 1001.
-
-3. **ACK (Acknowledge)** :
-   - Le client envoie un segment ACK pour accuser réception du SYN-ACK du serveur. La connexion est maintenant établie.
-   - Exemple : Le client envoie ACK avec SEQ = 1001, ACK = 2001.
+>[!TIP]
+>1. **SYN (Synchronize)** :
+>   - Le client envoie un segment SYN au serveur pour initier une connexion. Ce segment contient un numéro de séquence initial (ISN) du client.
+>   - Exemple : Le client envoie SYN avec ISN = 1000.
+>
+>2. **SYN-ACK (Synchronize-Acknowledge)** :
+>   - Le serveur répond avec un segment SYN-ACK, qui accuse réception du SYN du client en incluant le numéro de séquence du client + 1, et envoie son propre numéro de séquence initial.
+>   - Exemple : Le serveur envoie SYN-ACK avec ISN = 2000, ACK = 1001.
+>
+>3. **ACK (Acknowledge)** :
+>   - Le client envoie un segment ACK pour accuser réception du SYN-ACK du serveur. La connexion est maintenant établie.
+>   - Exemple : Le client envoie ACK avec SEQ = 1001, ACK = 2001.
 
 Après cette séquence, le client et le serveur peuvent échanger des données de manière fiable, avec TCP garantissant la livraison, l'ordre et la vérification des erreurs.
 
