@@ -4,9 +4,10 @@
 # TP : Découverte de l'encapsulation des protocoles avec Wireshark
 
 #### Objectifs pédagogiques
-- Comprendre le concept d'encapsulation des protocoles dans le modèle OSI.
-- Identifier et analyser les différents niveaux de protocoles (Ethernet, IP, ICMP, TCP, UDP, HTTP, HTTPS) dans une capture de trafic réseau.
-- Utiliser Wireshark pour capturer et examiner des paquets réseau.
+>[!NOTE]
+>- Comprendre le concept d'encapsulation des protocoles dans le modèle OSI.
+>- Identifier et analyser les différents niveaux de protocoles (Ethernet, IP, ICMP, TCP, UDP, HTTP, HTTPS) dans une capture de trafic réseau.
+>- Utiliser Wireshark pour capturer et examiner des paquets réseau.
 
 #### Pré-requis
 - Installation de Wireshark sur les ordinateurs des apprenants.
