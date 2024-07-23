@@ -207,10 +207,84 @@ Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial da
 ### Synthèse sur le protocole ETHERNET
 ![](./Images/Image2.jpg)
 ### Synthèse sur les fibres optiques
-![](./Images/Image1.jpg)
 ![](./Images/Fibre_Image4.png)
 ![T568B](./Images/T568B_DROIT_Image5.png)
 ![T568A](./Images/T568A_DROIT_Image6.png)
+
+### Synthèse sur le Fonctionnement d'ARP (Address Resolution Protocol)
+
+#### Introduction
+L'**Address Resolution Protocol (ARP)** est un protocole crucial dans les réseaux IP, utilisé pour mapper les adresses IP (niveau 3 du modèle OSI) aux adresses MAC (niveau 2 du modèle OSI). Cela permet la communication sur les réseaux locaux (LAN).
+
+#### Fonctionnement de l'ARP
+
+1. **Résolution d'adresse**:
+   - Lorsqu'un appareil sur un réseau local souhaite communiquer avec un autre appareil, il doit connaître l'adresse MAC de l'appareil cible.
+   - Si l'adresse MAC n'est pas connue, l'appareil émetteur envoie une requête ARP sur le réseau. Cette requête est un message broadcast qui demande "Qui a l'adresse IP x.x.x.x ?"
+   - L'appareil possédant l'adresse IP demandée répond avec une réponse ARP, fournissant son adresse MAC.
+
+2. **Requête ARP**:
+   - **Broadcast**: La requête ARP est envoyée à tous les appareils sur le réseau local.
+   - **Format**: Contient l'adresse IP de la destination et l'adresse MAC de l'émetteur.
+
+![](./Images/Diagramme%20ARP%20broadcast.jpg)
+
+3. **Réponse ARP**:
+   - **Unicast**: La réponse est envoyée directement à l'appareil qui a émis la requête ARP.
+   - **Format**: Contient l'adresse MAC correspondante à l'adresse IP demandée.
+
+![](./Images/Diagramme%20ARP%20unicast.jpg)
+
+4. **Cache ARP**:
+   - Pour éviter des requêtes ARP répétitives, les appareils stockent les correspondances IP-MAC dans un cache ARP.
+   - Les entrées dans le cache ARP ont une durée de vie limitée pour s'assurer qu'elles restent à jour.
+
+#### Commandes DOS Utilisant ARP
+
+La commande `arp` sous DOS (ou Command Prompt sous Windows) permet d'interagir avec le cache ARP. Voici quelques exemples pratiques:
+
+1. **Afficher le Cache ARP**:
+   - Commande:
+     ```dos
+     arp -a
+     ```
+   - **Description**: Affiche les entrées actuelles du cache ARP. Vous pouvez voir les adresses IP et leurs adresses MAC correspondantes.
+
+2. **Ajouter une Entrée ARP Statique**:
+   - Commande:
+     ```dos
+     arp -s 192.168.1.1 00-aa-00-62-c6-09
+     ```
+   - **Description**: Ajoute une entrée statique au cache ARP, liant l'adresse IP `192.168.1.1` à l'adresse MAC `00-aa-00-62-c6-09`. Les entrées statiques ne sont pas supprimées automatiquement.
+
+3. **Supprimer une Entrée ARP**:
+   - Commande:
+     ```dos
+     arp -d 192.168.1.1
+     ```
+   - **Description**: Supprime l'entrée ARP pour l'adresse IP `192.168.1.1` du cache ARP (mode administrateur).
+
+4. **Afficher les Options de la Commande ARP**:
+   - Commande:
+     ```dos
+     arp -h
+     ```
+   - **Description**: Affiche l'aide et les options disponibles pour la commande `arp`.
+
+#### Scénarios d'Utilisation de ARP
+
+1. **Diagnostic Réseau**:
+   - Utiliser `arp -a` pour vérifier les adresses MAC des appareils sur le réseau. Cela peut aider à diagnostiquer des problèmes de connectivité.
+
+2. **Sécurité Réseau**:
+   - Surveillance du cache ARP pour détecter des attaques de type ARP spoofing où un attaquant falsifie les réponses ARP pour rediriger le trafic.
+
+3. **Administration Réseau**:
+   - Configuration de tables ARP statiques pour des appareils critiques afin de prévenir les changements de correspondances IP-MAC et augmenter la sécurité.
+
+#### Conclusion
+
+L'ARP est un protocole fondamental pour la communication sur les réseaux locaux, facilitant la correspondance entre les adresses IP et MAC. Les commandes DOS associées à ARP offrent des outils puissants pour gérer, diagnostiquer et sécuriser le cache ARP, aidant les administrateurs réseau à maintenir une infrastructure réseau fonctionnelle et sécurisée.
 
 # VLAN
 ![](./Images/Image2.jpg)
@@ -395,7 +469,7 @@ Connectez-vous au switch via le site web embarqué.
 1. Assignez les ports aux VLANs :
 - VLAN 10 : ports de 1 à 8.
 - VLAN 20 : ports de 9 à 16.
-- VLAN 30 : ports de 17 à 24.
+- VLAN 30 : ports de 17 à 20.
     
 ### Étape 4 : Vérification de la configuration des VLANs
 1. Vérifiez la configuration des VLANs.
@@ -406,7 +480,7 @@ Connectez-vous au switch via le site web embarqué.
 3. Testez la connectivité en utilisant des commandes `ping` pour vérifier que les ordinateurs du même VLAN peuvent communiquer entre eux :
 - PC sur le port 1 (VLAN 10) doit pouvoir pinguer un PC sur le port 8 (VLAN 10).
 - PC sur le port 9 (VLAN 20) doit pouvoir pinguer un PC sur le port 16 (VLAN 20).
-- PC sur le port 17 (VLAN 30) doit pouvoir pinguer un PC sur le port 24 (VLAN 30).
+- PC sur le port 17 (VLAN 30) doit pouvoir pinguer un PC sur le port 20 (VLAN 30).
 
 ## Partie 2 : Configuration de la liaison Trunk entre deux Switches L2
 
