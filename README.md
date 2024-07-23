@@ -822,9 +822,9 @@ La principale différence entre les SFP SX et LX réside dans la longueur d'onde
 
 # Synthèse sur le Routage IP
 
-![](./Images/ARPANET_first_router.jpg)*premier routeur de l'histoire, réseau ARPANET : IMP - 1969*
+![](./Images/ARPANET_first_router.jpg)*Premier routeur de l'histoire, réseau ARPANET : IMP (Interface Message Processor) - 1969*
 
-![](./Images/Interface-Message-Processor-IMP-first-packet-router-for-the-ARPANET-designed-in-the.png)
+![](./Images/Interface-Message-Processor-IMP-first-packet-router-for-the-ARPANET-designed-in-the.png)*Interface de l'IMP - 1969*
 
 ### Introduction au Routage IP
 >[!NOTE]
@@ -832,11 +832,12 @@ Le routage IP est le processus de transfert des paquets de données entre diffé
 
 ### Fonctionnement du Routage IP
 
-1. **Tables de Routage** : Les routeurs maintiennent des tables de routage contenant des informations sur les routes vers différentes destinations. Chaque entrée dans la table de routage spécifie un réseau de destination, un masque de sous-réseau, et la passerelle suivante à utiliser pour atteindre ce réseau.
-   
-2. **Protocole de Routage** : Les protocoles de routage, comme OSPF, BGP et RIP, permettent aux routeurs d'échanger des informations de routage et de mettre à jour leurs tables de routage. Ces protocoles peuvent être basés sur la distance (RIP), l'état des liens (OSPF) ou des chemins externes (BGP).
-
-3. **Décision de Routage** : Lorsqu'un paquet arrive sur un routeur, ce dernier examine l'adresse IP de destination et consulte sa table de routage pour déterminer la meilleure route à suivre. Si une route appropriée est trouvée, le paquet est transféré à la passerelle suivante ou à la destination finale.
+>[!TIP]
+>1. **Tables de Routage** : Les routeurs maintiennent des tables de routage contenant des informations sur les routes vers différentes destinations. Chaque entrée dans la table de routage spécifie un réseau de destination, un masque de sous-réseau, et la passerelle suivante à utiliser pour atteindre ce réseau.
+>   
+>2. **Protocole de Routage** : Les protocoles de routage, comme OSPF, BGP et RIP, permettent aux routeurs d'échanger des informations de routage et de mettre à jour leurs tables de routage. Ces protocoles peuvent être basés sur la distance (RIP), l'état des liens (OSPF) ou des chemins externes (BGP).
+>
+>3. **Décision de Routage** : Lorsqu'un paquet arrive sur un routeur, ce dernier examine l'adresse IP de destination et consulte sa table de routage pour déterminer la meilleure route à suivre. Si une route appropriée est trouvée, le paquet est transféré à la passerelle suivante ou à la destination finale.
 
 ### Commandes de Base de la Commande `route` sous DOS (Windows)
 
