@@ -514,18 +514,18 @@ La configuration des VLAN se fait principalement sur les commutateurs réseau (s
 Le VLAN par port, également connu sous le nom de VLAN statique, est une méthode de configuration des VLANs où chaque port d'un commutateur est associé manuellement à un VLAN spécifique. Les périphériques connectés à ces ports sont alors membres de ce VLAN particulier, quelle que soit leur adresse MAC ou tout autre critère.
 
 #### Avantages
-
-1. **Simplicité de Configuration** : La configuration des VLANs par port est simple et directe. Les administrateurs réseau assignent chaque port à un VLAN spécifique via des commandes simples sur le commutateur.
-2. **Facilité de Gestion** : Il est facile de visualiser et de gérer la topologie VLAN en se basant sur les ports du commutateur, ce qui facilite la documentation et le dépannage.
-3. **Sécurité** : En isolant les ports dans différents VLANs, il est possible de segmenter le réseau de manière à limiter l'accès à certaines ressources, augmentant ainsi la sécurité.
-4. **Prévisibilité** : La liaison des ports à des VLANs spécifiques rend le comportement du réseau plus prévisible, car les connexions sont fixes et ne changent pas dynamiquement.
+>[!TIP]
+>1. **Simplicité de Configuration** : La configuration des VLANs par port est simple et directe. Les administrateurs réseau assignent chaque port à un VLAN spécifique via des commandes simples sur le commutateur.
+>2. **Facilité de Gestion** : Il est facile de visualiser et de gérer la topologie VLAN en se basant sur les ports du commutateur, ce qui facilite la documentation et le dépannage.
+>3. **Sécurité** : En isolant les ports dans différents VLANs, il est possible de segmenter le réseau de manière à limiter l'accès à certaines ressources, augmentant ainsi la sécurité.
+>4. **Prévisibilité** : La liaison des ports à des VLANs spécifiques rend le comportement du réseau plus prévisible, car les connexions sont fixes et ne changent pas dynamiquement.
 
 #### Inconvénients
-
-1. **Manque de Flexibilité** : Tout changement dans la topologie réseau, comme le déplacement de périphériques, nécessite une reconfiguration manuelle des ports VLAN, ce qui peut être fastidieux et sujet à des erreurs.
-2. **Scalabilité Limitée** : Pour les réseaux de grande taille avec de nombreux utilisateurs ou périphériques mobiles, la gestion des VLANs par port peut devenir ingérable et difficile à maintenir.
-3. **Temps de Gestion** : La configuration et la maintenance des VLANs par port nécessitent un temps de gestion plus important, surtout dans des environnements dynamiques où les périphériques sont souvent ajoutés ou déplacés.
-4. **Complexité Accrue dans les Environnements Dynamiques** : Dans les environnements où les utilisateurs ou les périphériques changent fréquemment de place, la configuration manuelle des VLANs par port peut devenir complexe et laborieuse.
+>[!TIP]
+>1. **Manque de Flexibilité** : Tout changement dans la topologie réseau, comme le déplacement de périphériques, nécessite une reconfiguration manuelle des ports VLAN, ce qui peut être fastidieux et sujet à des erreurs.
+>2. **Scalabilité Limitée** : Pour les réseaux de grande taille avec de nombreux utilisateurs ou périphériques mobiles, la gestion des VLANs par port peut devenir ingérable et difficile à maintenir.
+>3. **Temps de Gestion** : La configuration et la maintenance des VLANs par port nécessitent un temps de gestion plus important, surtout dans des environnements dynamiques où les périphériques sont souvent ajoutés ou déplacés.
+>4. **Complexité Accrue dans les Environnements Dynamiques** : Dans les environnements où les utilisateurs ou les périphériques changent fréquemment de place, la configuration manuelle des VLANs par port peut devenir complexe et laborieuse.
 
 ### Conclusion
 >[!NOTE]
