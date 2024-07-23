@@ -11,8 +11,8 @@
 
 #### Pré-requis
 >[!TIP]
-- Installation de Wireshark sur les ordinateurs.
-- Connaissance de base du modèle OSI et des principaux protocoles réseau.
+>- Installation de Wireshark sur les ordinateurs.
+>- Connaissance de base du modèle OSI et des principaux protocoles réseau.
 
 #### Matériel nécessaire
 - Ordinateurs avec Wireshark installé.
