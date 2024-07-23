@@ -823,70 +823,35 @@ L'activation de QoS varie en fonction des équipements et des environnements ré
 ### Conclusion
 La QoS est une composante essentielle des réseaux modernes, en particulier pour les environnements où la bande passante est partagée entre de nombreuses applications ayant des besoins différents. En permettant la classification, la priorisation, le marquage et la gestion du trafic réseau, QoS assure une meilleure performance, une utilisation optimisée de la bande passante et une expérience utilisateur améliorée.
 
-
-# Tables ARP
-### Synthèse sur les Tables ARP
-
-#### Définition
-ARP (Address Resolution Protocol) est un protocole utilisé pour mapper les adresses IP à des adresses MAC sur un réseau local. Les tables ARP, ou cache ARP, sont des bases de données temporaires stockant les correspondances entre les adresses IP et les adresses MAC. Lorsqu'un périphérique veut communiquer avec un autre sur le même réseau, il utilise ARP pour trouver l'adresse MAC associée à l'adresse IP cible.
-
-#### Fonctionnement
-1. **Demande ARP** : Lorsqu'un périphérique A veut envoyer des données à un périphérique B, il envoie une requête ARP en broadcast pour demander l'adresse MAC associée à l'adresse IP de B.
-2. **Réponse ARP** : Le périphérique B répond en unicast avec son adresse MAC.
-3. **Mise à jour de la table ARP** : A ajoute l'association IP-MAC de B à sa table ARP pour des communications futures. La table ARP est mise à jour périodiquement pour éviter des entrées obsolètes.
-
-#### Importance
-Les tables ARP sont cruciales pour le fonctionnement efficace des réseaux locaux. Elles permettent :
-- Une résolution rapide des adresses.
-- Une réduction des requêtes ARP en broadcast, minimisant ainsi le trafic réseau inutile.
-
-### Commandes ARP Essentielles sous Windows
-
-| **Commande**             | **Description**                                                    |
-|--------------------------|--------------------------------------------------------------------|
-| `arp -a`                 | Affiche toutes les entrées de la table ARP.                        |
-| `arp -s <IP> <MAC>`      | Ajoute une entrée statique dans la table ARP.                      |
-| `arp -d <IP>`            | Supprime une entrée de la table ARP.                               |
-| `arp -v`                 | Affiche les détails des entrées ARP, y compris les interfaces.     |
-| `arp -N <interface>`     | Affiche les entrées ARP pour une interface réseau spécifique.      |
-| `arp -d *`               | Supprime toutes les entrées dynamiques de la table ARP.            |
-
-### Exemples d'utilisation
-
-1. **Afficher la table ARP** :
-   ```plaintext
-   arp -a
-   ```
-   Cette commande montre toutes les entrées ARP actuelles, y compris les adresses IP, les adresses MAC associées et l'interface réseau.
-
-2. **Ajouter une entrée statique** :
-   ```plaintext
-   arp -s 192.168.1.10 00-AA-BB-CC-DD-EE
-   ```
-   Cette commande associe de manière permanente l'adresse IP 192.168.1.10 à l'adresse MAC 00-AA-BB-CC-DD-EE.
-
-3. **Supprimer une entrée** :
-   ```plaintext
-   arp -d 192.168.1.10
-   ```
-   Cette commande supprime l'entrée associée à l'adresse IP 192.168.1.10 de la table ARP.
-
-4. **Afficher les entrées ARP d'une interface spécifique** :
-   ```plaintext
-   arp -N 192.168.1.1
-   ```
-   Cette commande affiche les entrées ARP associées à l'interface réseau avec l'adresse IP 192.168.1.1.
-
-Les tables ARP sont essentielles pour le bon fonctionnement des réseaux locaux, et les commandes ARP sous Windows permettent aux administrateurs de gérer et de dépanner ces tables efficacement.
 # Routeurs
 
-# Outils logiciels
-## Networkstuff
+## TP 1 : mise en oeuvre d'un réseau LAN/WAN avec port forwarding.
 
-## iPerf
+Au préalable, vous devez constituer 3 ou 4 équipes.
 
-## Mobaxterm
+1.	Etablir et compléter le schéma d’un mini-réseau (voir ci-dessous).
 
-test
+![](./Images/Plan%20d'adressage%20LAN_WAN.JPG)
+
+2.	Mettre en œuvre le NAT dynamique (les machines du réseau LAN privé doivent pouvoir accéder au réseau WAN public).
+Adresse réseau LAN privé    : à définir au choix par chaque équipe.
+Adresse réseau WAN public   : à définir par l'ensemble des équipes
+Tester et valider en pinguant les adresses WAN des différents routeurs.
+
+3.	Mettre en œuvre le NAPT Port Forwarding permettant l'accès à un serveur de test port 42000 depuis le réseau WAN public. 
+Tester et valider.
+
+4.	Faire des captures de trames avec Ethereal/Wireshark et comparer les échanges entre les machines (identifier les trames de traduction d’adresses, notamment au niveau des ports).
+
+## TP 2 : mise en oeuvre d'un réseau LAN/WAN avec port forwarding.
+
+Voir système.
+Vous disposez des deux API (un client et un serveur) et un client raspberry. Le serveur écoute sur les ports 502 et 503.
+
+1. Réaliser la configuration du routeur LAN/WAN avec mise en oeuvre du port forwarding.
+2. Tester et valider les échanges avec wireshark.
+
+
+
 
 
