@@ -869,6 +869,7 @@ Le routage IP est une composante cruciale des réseaux modernes, permettant l'ac
 
 ## TP 1 : mise en oeuvre d'un réseau LAN/WAN avec port forwarding.
 
+>[!TIP]
 Au préalable, vous devez constituer 3 ou 4 équipes.
 
 1.	Etablir et compléter le schéma d’un mini-réseau (voir ci-dessous).
