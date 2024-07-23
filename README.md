@@ -63,11 +63,12 @@
 2. **Examiner les paquets Ethernet :**
    - Appliquez le filtre `eth` et sélectionnez un paquet.
    - Notez les adresses MAC source et destination, ainsi que le type de protocole.
+   - Tester avec un filtre : eth.src == [adresse MAC].
 
 3. **Examiner les paquets IP :**
    - Appliquez le filtre `ip` et sélectionnez un paquet.
    - Notez les adresses IP source et destination, et le champ Protocole.
-
+   - Tester avec un filtre et une condition : ip and eth.dst==[adresse MAC].  
 4. **Examiner les paquets ICMP :**
    - Appliquez le filtre `icmp` et sélectionnez un paquet.
    - Notez le type et le code ICMP.
@@ -204,8 +205,74 @@ Les adresses IP privées sont utilisées au sein des réseaux locaux (LAN) pour 
 Les adresses IPv4 privées pour les classes A, B et C jouent un rôle crucial dans la gestion des réseaux internes, offrant sécurité, flexibilité et une utilisation efficace des adresses IP. Elles permettent aux organisations de tous types et de toutes tailles de structurer leurs réseaux de manière efficace, tout en conservant les adresses IP publiques pour les communications externes.
 
 # ETHERNET
-### Synthèse sur le protocole ETHERNET
+
+### Synthèse sur le Fonctionnement du Protocole Ethernet, les Adresses MAC et l'Encapsulation
+
 ![](./Images/Image2.jpg)
+
+#### Introduction
+**Ethernet** est une technologie de réseau largement utilisée pour les réseaux locaux (LAN). Il définit les règles et les normes pour la communication des données via des câbles physiques. Ethernet fonctionne au niveau 2 (couche liaison de données) du modèle OSI et utilise des adresses MAC pour identifier de manière unique chaque appareil sur un réseau.
+
+#### Fonctionnement du Protocole Ethernet
+
+1. **Trames Ethernet (Ethernet Frames)**:
+   - Les données sur un réseau Ethernet sont transmises sous forme de trames. Une trame Ethernet encapsule les données utilisateur avec des en-têtes et des champs de contrôle.
+   - **Structure d'une trame Ethernet**:
+     - **Préambule**: Séquence de 7 octets utilisée pour synchroniser les horloges des dispositifs de réception.
+     - **SFD (Start Frame Delimiter)**: Indique le début de la trame (1 octet).
+     - **Adresse MAC de destination**: 6 octets.
+     - **Adresse MAC source**: 6 octets.
+     - **Type/EtherType**: 2 octets, indique le protocole de couche supérieure encapsulé dans la trame.
+     - **Données**: Charge utile (46 à 1500 octets), contenant les données utilisateur et les en-têtes des couches supérieures.
+     - **FCS (Frame Check Sequence)**: 4 octets utilisés pour la détection d'erreurs.
+
+2. **Transmission et Réception**:
+   - **Envoi**: L'émetteur crée un cadre Ethernet avec les adresses MAC de destination et source, encapsule les données, et ajoute une FCS pour l'intégrité.
+   - **Réception**: Le récepteur décode le cadre, vérifie la FCS pour l'intégrité, et extrait les données si l'adresse MAC de destination correspond à la sienne ou est une diffusion (broadcast).
+
+#### Adresses MAC
+
+1. **Définition**:
+   - Une **adresse MAC (Media Access Control)** est une adresse physique unique assignée à chaque interface réseau. Elle est codée sur 48 bits (6 octets) et est généralement représentée sous forme hexadécimale (par exemple, `00:1A:2B:3C:4D:5E`).
+
+2. **Structure**:
+   - **OUI (Organizationally Unique Identifier)**: Les 24 premiers bits, identifiant le fabricant.
+   - **NIC (Network Interface Controller)**: Les 24 derniers bits, identifiant de manière unique l'interface réseau au sein des dispositifs du fabricant.
+
+3. **Types d'Adresses**:
+   - **Unicast**: Adresse unique destinée à un seul dispositif.
+   - **Broadcast**: Adresse de diffusion (`FF:FF:FF:FF:FF:FF`), destinée à tous les dispositifs sur le réseau local.
+   - **Multicast**: Adresses destinées à un groupe spécifique de dispositifs.
+
+#### Encapsulation
+
+1. **Définition**:
+   - **Encapsulation** est le processus d'ajouter des en-têtes et des informations de contrôle autour des données utilisateur à chaque couche du modèle OSI. Cela permet de transporter les données à travers les différents médias et protocoles du réseau.
+
+2. **Décapsulation**:
+   - À la réception, chaque couche décapsule les données en enlevant les en-têtes ajoutés par la couche correspondante à l'émetteur, jusqu'à ce que les données utilisateur soient récupérées.
+
+#### Commandes Associées
+
+1. **Affichage de l'Adresse MAC (sous Windows)**:
+   - Commande:
+     ```dos
+     ipconfig /all
+     ```
+   - **Description**: Affiche la configuration IP de l'ensemble des interfaces réseau, y compris les adresses MAC.
+
+2. **Affichage de l'Adresse MAC (sous Linux)**:
+   - Commande:
+     ```dos
+     ip a
+     ```
+   - **Description**: Affiche la configuration IP de l'ensemble des interfaces réseau, y compris les adresses MAC.
+
+
+#### Conclusion
+
+Le protocole Ethernet, avec ses adresses MAC uniques et son mécanisme d'encapsulation, permet une communication fiable et structurée entre les dispositifs connectés, tout en offrant des mécanismes robustes pour l'intégrité des données et la gestion des erreurs. Les concepts d'ARP, d'adresses MAC et d'encapsulation sont fondamentaux pour comprendre le fonctionnement et la gestion des réseaux Ethernet.
+
 ### Synthèse sur les fibres optiques
 ![](./Images/Fibre_Image4.png)
 ![T568B](./Images/T568B_DROIT_Image5.png)
@@ -677,10 +744,12 @@ Pour configurer le Spanning Tree Protocol sur un commutateur D-Link, voici un ex
      3. Tester la configuration en créant des boucles réseau.
 
 # Interconnexion des switchs
-## Interfaces GBIC 
-![SFP SX](./Images/20211217222425548701d13b3e4f34bfee9e6c3bc9747e.webp)
 
+![](./Images/Image1.jpg)
+## Interfaces GBIC 
 ![SFP SX](./Images/Simplex-BiDi-SFP-vs-Duplex-SFP.jpg)
+## Types de fibre
+![SFP SX](./Images/20211217222425548701d13b3e4f34bfee9e6c3bc9747e.webp)
 
 La principale différence entre les SFP SX et LX réside dans la longueur d'onde utilisée et la distance de transmission prise en charge.
  > SFP SX (Short Wavelength)
