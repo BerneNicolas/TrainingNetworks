@@ -438,7 +438,7 @@ Connectez-vous au switch via le site web embarqué.
 Ce TP vous a permis de configurer des VLANs sur des switches L2 et de mettre en place une liaison Trunk pour transporter les VLANs entre deux switches. Vous avez également appris à vérifier la configuration et à tester la connectivité des VLANs.
 
 # SPANNING TREE
-![](./Images/Image2.jpg)
+![](./Images/7abed25d-16f9-4b4f-843f-01be21c09d13.jpg)
 ### Synthèse sur le Spanning Tree Protocol (STP)
 
 #### Définition
@@ -672,25 +672,15 @@ L'activation de QoS varie en fonction des équipements et des environnements ré
 
 4. **Application des Politiques sur les Interfaces Réseau** :
    - Appliquez les politiques de QoS sur les interfaces réseau où le contrôle du trafic est nécessaire.
-   - Exemple de configuration sur un routeur Cisco :
-     ```plaintext
-     class-map match-all VOIP
-       match ip dscp ef
-     policy-map QOS_POLICY
-       class VOIP
-         priority percent 30
-       class class-default
-         fair-queue
-     interface GigabitEthernet0/1
-       service-policy output QOS_POLICY
-     ```
-
+   
 5. **Vérification et Surveillance** :
    - Utilisez des outils de surveillance pour vérifier que les politiques de QoS sont appliquées correctement et que les performances du réseau sont conformes aux attentes.
    - Ajustez les politiques si nécessaire en fonction des besoins en bande passante et des performances observées.
 
 ### Conclusion
 La QoS est une composante essentielle des réseaux modernes, en particulier pour les environnements où la bande passante est partagée entre de nombreuses applications ayant des besoins différents. En permettant la classification, la priorisation, le marquage et la gestion du trafic réseau, QoS assure une meilleure performance, une utilisation optimisée de la bande passante et une expérience utilisateur améliorée.
+
+
 # Tables ARP
 ### Synthèse sur les Tables ARP
 
